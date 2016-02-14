@@ -3,5 +3,10 @@ body
  font-family: Consolas;
  background-color: black;
  color: white;
- 
+}
+
+.links
+{
+ font-family:Optima;
+ color: red;	
 }
