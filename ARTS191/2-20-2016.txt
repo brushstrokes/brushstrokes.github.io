@@ -1,0 +1,4 @@
+In-Class
+
+Quick Select > Shift + CMD + I > Blur
+
