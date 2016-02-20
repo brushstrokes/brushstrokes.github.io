@@ -1,4 +1,5 @@
 In-Class
 
 Quick Select > Shift + CMD + I > Blur
-
+Make a selection > Make a working path > Highlight with text tool
+	(*Wavy Line*)
