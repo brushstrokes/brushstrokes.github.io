@@ -1,0 +1,33 @@
+head{}
+
+body
+{
+ text-align: center;
+ padding: 10px; 
+}
+
+
+
+p
+{
+}
+
+h1
+{
+}
+
+.center 
+{
+ margin: auto;
+ width: 50%;
+ border: 1px solid #73AD21;
+ padding: 100px;
+}
+
+#link
+{
+ link:red;
+ visited: blue;
+ hover:orange;
+ active: green;
+}
