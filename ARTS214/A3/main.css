@@ -1,0 +1,51 @@
+/* CSS Document */
+
+
+body
+{
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+	align-:center;
+	color: black;
+	opacity:.90;
+	margin: 25px;
+	padding: 50px;
+	width: 75%;
+	text-align:center;
+	background: #DC2424; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #DC2424 , #4A569D); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #DC2424 , #4A569D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+}
+
+#modes
+{
+	background-color: orange;
+	border: 5px solid red;
+	box-shadow: 10px 10px 5px #000000;
+	
+}
+
+#theory
+{
+	background-color: green;
+	border: 5px solid yellow;
+	box-shadow: 10px 10px 5px #000000;
+
+}
+
+#models
+{
+	background-color: violet;
+	border: 5px solid blue;
+	box-shadow: 10px 10px 5px #000000;
+}
+
+#psychology
+{
+    background: -webkit-linear-gradient(red,yellow,blue); /* Safari 5.1-6.0 */
+    background: -o-linear-gradient(red,yellow,blue); /* Opera 11.1-12.0 */
+    background: -moz-linear-gradient(red,yellow,blue); /* Firefox 3.6-15 */
+    background: linear-gradient(red,yellow,blue); /* Standard syntax */
+    border: 5px solid black;
+    box-shadow: 10px 10px 5px #000000;
+}
