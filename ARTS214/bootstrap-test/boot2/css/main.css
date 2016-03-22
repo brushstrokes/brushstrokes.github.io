@@ -13,9 +13,10 @@ body
 }
 
 $("span4").ready(function(){
- $("button").click(function(){
+ $("button").click(function()
+{
 	$("p").hide();
 });
 
-
 });
+
