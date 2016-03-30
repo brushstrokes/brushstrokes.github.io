@@ -1,3 +1,23 @@
+
+
+
+// Main
+
+body
+{
+ font-family: Consolas;
+ background-color: black;
+ color: white;
+ padding: 25px;
+}
+
+a
+{
+ font-family: Optima;
+ color: red;	
+}
+
+
 // Start RGS
 /*  SECTIONS  */
 .section {
@@ -46,19 +66,3 @@
 	.span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
 }
 // End RGS
-
-
-// Main
-body
-{
- font-family: Consolas;
- background-color: black;
- color: white;
- padding: 25px;
-}
-
-a
-{
- font-family: Optima;
- color: red;	
-}
