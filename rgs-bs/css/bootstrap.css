@@ -223,15 +223,16 @@ textarea {
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Consolas", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
-  color: #333333;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: black;
 }
 
 a {
-  color: #0088cc;
+font-family: Optima;
+  color: #red;
   text-decoration: none;
 }
 
