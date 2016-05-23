@@ -8,16 +8,11 @@
  *
  * */
 
-td
-{
- color: red;
-
-}
-
 .links
 {
  font-family: Optima;
  color: red;	
+
 }
 
 body
