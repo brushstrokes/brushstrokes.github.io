@@ -8,11 +8,25 @@
  *
  * */
 
-td
-{
- color: red;
+// ID SELECTORS
+
+#banner
+{   
+background-size: cover;
+ position: absolute;
+ 
 
 }
+#bannertext
+{
+position: absolute;
+text-align: center;
+top: 7em;
+left: 7em;
+ 
+}
+
+// CLASSES
 
 .links
 {
@@ -20,17 +34,19 @@ td
  color: red;	
 }
 
+// MAIN CALLs
+
+td
+{ color: red;}
+
 body
-{
+{ 
  font-family: Consolas;
  background-color: black;
  color: white;
- padding: 25px;
-}
-a
-{
+ padding: 25px;}
 
-}
+a{}
 
 // Start RGS
 /*  SECTIONS  */
