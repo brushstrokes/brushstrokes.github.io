@@ -11,19 +11,16 @@
 // ID SELECTORS
 
 #banner
-{   
-background-size: cover;
- position: absolute;
- 
+{ 
+width: 100%;
+position: relative;
+background-size: cover; 
 
 }
 #bannertext
 {
 position: absolute;
-text-align: center;
-top: 7em;
-left: 7em;
- 
+
 }
 
 // CLASSES
