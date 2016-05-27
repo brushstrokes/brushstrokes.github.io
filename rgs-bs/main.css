@@ -31,10 +31,20 @@ position: absolute;
  color: red;	
 }
 
-// MAIN CALLs
+/*
+ * 
+ * Main Calls
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
 
 td
-{ color: red;}
+{ 
+ color: red;}
 
 body
 { 
@@ -43,7 +53,9 @@ body
  color: white;
  padding: 25px;}
 
-a{}
+a{
+    
+}
 
 // Start RGS
 /*  SECTIONS  */
