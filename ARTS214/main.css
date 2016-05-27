@@ -1,7 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:100|Indie+Flower|Poiret+One);
 
 body
-{ }
+{ 
+background-color: black;
+}
 
 h1
 {    
