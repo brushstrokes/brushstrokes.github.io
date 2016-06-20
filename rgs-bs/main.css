@@ -81,7 +81,44 @@ h1
  * 
  *
  *
+ *
  * */
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:100|Indie+Flower|Poiret+One);
+
+body
+{ 
+background-color: black;
+}
+h1
+{    
+    font-size: 5em;
+    font-family: 'Poiret One', sans-serif;
+    color: black;
+    text-align: center;
+}
+p
+{   font-family: 'Raleway', cursive;
+    font-kerning: 5px;
+    font-size: 20px;
+}
+h2
+{   
+    text-align: left;
+    font-size: 3em;
+    font-family: 'Poiret One', sans-serif;
+    color: black;
+    text-align: center;
+}
+h3
+{   
+font-family: 'Poiret One', cursive;
+}
+
+
+
+
+
 
 /*
  * 
@@ -92,6 +129,8 @@ h1
  * 
  * 
  */
+
+
 .credits-page-body
 {
    background-color: black;
@@ -112,6 +151,56 @@ h1
  font-family: Optima;
  color: red;	
 }
+
+
+.photo
+{
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    
+}
+.background-blk
+{
+    background-color: black;
+}
+.testing
+{   
+    background-color: whitesmoke;
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    font-size: 25px;
+    font-weight: 25px;
+
+}
+.alert alert-warning alert-dismissible
+{   padding-top: 100px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+}
+.entry{
+    padding-top: 25px;
+    padding-right: 100px;
+    padding-bottom: 25px;
+    padding-left: 100px;
+    
+}
+$('#myModal').modal(options)
+
+
+
+
+
+
+
+
+
+
 
 /*
  * 
@@ -135,6 +224,30 @@ background-size: cover;
 position: absolute;
 
 }
+
+#h1-a
+{
+    color: white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+}
+
+
+#h2-a
+{
+    color: white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
 /*
  * 
  * Main Calls
@@ -173,6 +286,40 @@ position: absolute;
 .group { zoom:1; /* For IE 6/7 */ }
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Start RGS
+>>>>>>> 351d09f9666916b9157616bb06d31f357bbdd8e3
 /*  SECTIONS  */
 .section {
 	clear: both;
@@ -197,3 +344,139 @@ position: absolute;
 //  #########################################
 
 
+<<<<<<< HEAD
+=======
+@media only screen and (max-width: 480px) {
+	.col { margin: 1% 0 1% 0%;}
+	.span_3_of_3, .span_2_of_3, 
+	.span_1_of_3 { width: 100%; }
+}
+// End RGS
+// #############################################
+
+    nav {  
+      height: 40px;  
+      width: 100%;  
+      background: #333;  
+      font-size: 11pt;  
+      font-family: Arial, sans-serif;  
+      font-weight: bold;  
+      position: relative;  
+      border-bottom: 1px solid #666;  
+  }  
+  nav ul {  
+      padding: 0;  
+      margin: 0 auto;  
+      width: 600px;  
+      height: 40px;  
+  }  
+  nav li {  
+     display: inline;  
+     float: left;  
+     list-style-type: none;  
+ }
+
+ .clearfix:before,  
+ .clearfix:after {  
+  content: " ";  
+  display: table;  
+}  
+.clearfix:after {  
+  clear: both;  
+}  
+.clearfix {  
+  *zoom: 1;  
+}  
+
+nav a {  
+  color: #fff;  
+  display: inline-block;  
+  width: 100px;  
+  text-align: center;  
+  text-decoration: none;  
+  line-height: 40px;  
+  text-shadow: 1px 1px 0px #000;
+} 
+nav li a {  
+    border-right: 1px solid #666;  
+    box-sizing:border-box;  
+    -moz-box-sizing:border-box;  
+    -webkit-box-sizing:border-box;  
+}  
+nav li:last-child a {  
+    border-right: 0;  
+} 
+
+nav a:hover, nav a:active {  
+    background-color: #8c99a4;  
+}
+
+nav a#pull {  
+    display: none;  
+} 
+
+/*tablet screens*/
+@media screen and (max-width: 600px) {  
+    nav {   
+        height: auto;  
+    }  
+    nav ul {  
+        width: 100%;  
+        display: block;  
+        height: auto;  
+    }  
+    nav li {  
+        width: 50%;  
+        float: left;  
+        position: relative;  
+    }  
+    nav li a {  
+        border-bottom: 1px solid #666;  
+        border-right: 1px solid #666;  
+    }  
+    nav a {  
+        text-align: left;  
+        width: 100%;  
+        text-indent: 25px;  
+    }  
+}  
+
+@media only screen and (max-width: 480px) {  
+    nav {  
+        border-bottom: 0;  
+    }  
+    nav ul {  
+        display: none;  
+        height: auto;  
+    }  
+
+    nav li {
+        display: block;
+        float: none;
+        width: 100%;
+    }
+    nav li a {
+        border-bottom: 1px solid #666;
+    }
+
+    nav a#pull {  
+        display: block;  
+        background-color: #333; 
+        border-bottom: 1px solid #666; 
+        width: 100%;  
+        position: relative;  
+    }  
+    nav a#pull:after {  
+        content: "\f0c9";
+        font-family: FontAwesome;
+        width: 64px;  
+        height: 64px;  
+        display: inline-block;  
+        position: absolute;  
+        left: 50px;  
+        top: 0px;  
+    }  
+}  
+
+
+>>>>>>> 351d09f9666916b9157616bb06d31f357bbdd8e3
