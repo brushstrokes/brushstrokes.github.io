@@ -1,3 +1,10 @@
+/*
+ *
+ * # id="one"
+ * . class="two" 
+ *
+ * */
+
 /*CSS Reset*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -20,18 +27,17 @@ time, mark, audio, video
 	font: inherit;
 	vertical-align: baseline;
 }
+@import url(https://fonts.googleapis.com/css?family=Raleway:100|Indie+Flower|Poiret+One);
+
+
 /* HTML5 display-role reset for older browserarticle, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section 
-{
-	display: block;
-}
-
+{ display: block; }
 *, html 
 {
     margin: 0;
     padding: 0;
 }
-
 header, section, footer 
 {
     display: block;
@@ -57,50 +63,19 @@ a
     
 }
 
-header
+head
 {    
-
 text-align: center;
 height: 15em;
-
-}
-
-h1
-{
-    font-size: 24pt;
-    
 }
 
 
-
-
-/*
- *
- * # id="one"
- * . class="two" 
- * 
- *
- *
- *
- * */
-
-@import url(https://fonts.googleapis.com/css?family=Raleway:100|Indie+Flower|Poiret+One);
-
-body
-{ 
-background-color: black;
-}
 h1
 {    
     font-size: 5em;
     font-family: 'Poiret One', sans-serif;
     color: black;
     text-align: center;
-}
-p
-{   font-family: 'Raleway', cursive;
-    font-kerning: 5px;
-    font-size: 20px;
 }
 h2
 {   
@@ -116,16 +91,18 @@ font-family: 'Poiret One', cursive;
 }
 
 
+p
+{   font-family: 'Raleway', cursive;
+    font-kerning: 5px;
+    font-size: 20px;
+}
 
 
 
 
 /*
  * 
- * classes
- * 
- * 
- * 
+ * classes 
  * 
  * 
  */
@@ -190,25 +167,12 @@ font-family: 'Poiret One', cursive;
     padding-left: 100px;
     
 }
-$('#myModal').modal(options)
-
-
-
-
-
-
-
-
 
 
 
 /*
  * 
  * id selector
- * 
- * 
- * 
- * 
  * 
  */
 
@@ -251,16 +215,8 @@ position: absolute;
 /*
  * 
  * Main Calls
- * 
- * 
- * 
- * 
- * 
+ *  
  */
-
-
-
-
 
 // GRID OF TWO ######################################
 
@@ -286,40 +242,8 @@ position: absolute;
 .group { zoom:1; /* For IE 6/7 */ }
 
 
-<<<<<<< HEAD
-=======
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Start RGS
->>>>>>> 351d09f9666916b9157616bb06d31f357bbdd8e3
+/* Start responsive grid system */
 /*  SECTIONS  */
 .section {
 	clear: both;
@@ -341,18 +265,14 @@ position: absolute;
 .group:after { clear:both;}
 .group { zoom:1; /* For IE 6/7 */ }
 
-//  #########################################
-
-
-<<<<<<< HEAD
-=======
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) 
+{
 	.col { margin: 1% 0 1% 0%;}
 	.span_3_of_3, .span_2_of_3, 
 	.span_1_of_3 { width: 100%; }
-}
-// End RGS
-// #############################################
+
+/* '//' doesn't work as a comment jackass */
+/* Your CSS file looked like shit, wtf were you doing? */
 
     nav {  
       height: 40px;  
@@ -479,4 +399,3 @@ nav a#pull {
 }  
 
 
->>>>>>> 351d09f9666916b9157616bb06d31f357bbdd8e3
