@@ -1,0 +1,34 @@
+header, #banner {
+	height: 250px;
+	background: #f2f2f2;
+	text-align: center;
+}
+
+.col {
+	background: #ddd;
+}
+
+h1 {
+	font-size: 3em;
+	padding: 1em 0;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+nav li {
+	padding: 1em 0;
+	text-align: center;
+}
+
+#container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#banner img {
+	min-width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+}

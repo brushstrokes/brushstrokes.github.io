@@ -1,0 +1,401 @@
+/*
+ *
+ * # id="one"
+ * . class="two" 
+ *
+ * */
+
+/*CSS Reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video 
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+@import url(https://fonts.googleapis.com/css?family=Raleway:100|Indie+Flower|Poiret+One);
+
+
+/* HTML5 display-role reset for older browserarticle, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section 
+{ display: block; }
+*, html 
+{
+    margin: 0;
+    padding: 0;
+}
+header, section, footer 
+{
+    display: block;
+    width: 100%;
+}
+
+/* Begin Page Styling */
+
+td
+{ 
+ color: red;
+}
+
+body
+{ 
+ font-family: Consolas;
+ background-color: black;
+ color: white;
+ padding: 25px;}
+
+a
+{
+    
+}
+
+head
+{    
+text-align: center;
+height: 15em;
+}
+
+
+h1
+{    
+    font-size: 5em;
+    font-family: 'Poiret One', sans-serif;
+    color: white;
+    text-align: center;
+}
+h2
+{   
+    text-align: left;
+    font-size: 3em;
+    font-family: 'Poiret One', sans-serif;
+    color: black;
+    text-align: center;
+}
+h3
+{   
+font-family: 'Poiret One', cursive;
+}
+
+
+p
+{   font-family: 'Raleway', cursive;
+    font-kerning: 5px;
+    font-size: 20px;
+}
+
+
+
+
+/*
+ * 
+ * classes 
+ * 
+ * 
+ */
+
+
+.credits-page-body
+{
+   background-color: black;
+    
+}
+.splash_page
+{
+    background-color: black;
+    
+}
+.arts-214
+{
+    background-color: black;
+    color: wheat;
+}
+.links
+{
+ font-family: Optima;
+ color: red;	
+}
+
+
+.photo
+{
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    
+}
+.background-blk
+{
+    background-color: black;
+}
+.testing
+{   
+    background-color: whitesmoke;
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    font-size: 25px;
+    font-weight: 25px;
+
+}
+.alert alert-warning alert-dismissible
+{   padding-top: 100px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+}
+.entry{
+    padding-top: 25px;
+    padding-right: 100px;
+    padding-bottom: 25px;
+    padding-left: 100px;
+    
+}
+
+
+
+/*
+ * 
+ * id selector
+ * 
+ */
+
+#banner
+{ 
+width: 100%;
+position: relative;
+background-size: cover; 
+
+}
+#bannertext
+{
+position: absolute;
+
+}
+
+#h1-a
+{
+    color: white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+}
+
+
+#h2-a
+{
+    color: white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+/*
+ * 
+ * Main Calls
+ *  
+ */
+
+// GRID OF TWO ######################################
+
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 2.0%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+
+
+/* Start responsive grid system */
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 2.0%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+@media only screen and (max-width: 480px) 
+{
+	.col { margin: 1% 0 1% 0%;}
+	.span_3_of_3, .span_2_of_3, 
+	.span_1_of_3 { width: 100%; }
+
+/* '//' doesn't work as a comment jackass */
+/* Your CSS file looked like shit, wtf were you doing? */
+
+    nav {  
+      height: 40px;  
+      width: 100%;  
+      background: #333;  
+      font-size: 11pt;  
+      font-family: Arial, sans-serif;  
+      font-weight: bold;  
+      position: relative;  
+      border-bottom: 1px solid #666;  
+  }  
+  nav ul {  
+      padding: 0;  
+      margin: 0 auto;  
+      width: 600px;  
+      height: 40px;  
+  }  
+  nav li {  
+     display: inline;  
+     float: left;  
+     list-style-type: none;  
+ }
+
+ .clearfix:before,  
+ .clearfix:after {  
+  content: " ";  
+  display: table;  
+}  
+.clearfix:after {  
+  clear: both;  
+}  
+.clearfix {  
+  *zoom: 1;  
+}  
+
+nav a {  
+  color: #fff;  
+  display: inline-block;  
+  width: 100px;  
+  text-align: center;  
+  text-decoration: none;  
+  line-height: 40px;  
+  text-shadow: 1px 1px 0px #000;
+} 
+nav li a {  
+    border-right: 1px solid #666;  
+    box-sizing:border-box;  
+    -moz-box-sizing:border-box;  
+    -webkit-box-sizing:border-box;  
+}  
+nav li:last-child a {  
+    border-right: 0;  
+} 
+
+nav a:hover, nav a:active {  
+    background-color: #8c99a4;  
+}
+
+nav a#pull {  
+    display: none;  
+} 
+
+/*tablet screens*/
+@media screen and (max-width: 600px) {  
+    nav {   
+        height: auto;  
+    }  
+    nav ul {  
+        width: 100%;  
+        display: block;  
+        height: auto;  
+    }  
+    nav li {  
+        width: 50%;  
+        float: left;  
+        position: relative;  
+    }  
+    nav li a {  
+        border-bottom: 1px solid #666;  
+        border-right: 1px solid #666;  
+    }  
+    nav a {  
+        text-align: left;  
+        width: 100%;  
+        text-indent: 25px;  
+    }  
+}  
+
+@media only screen and (max-width: 480px) {  
+    nav {  
+        border-bottom: 0;  
+    }  
+    nav ul {  
+        display: none;  
+        height: auto;  
+    }  
+
+    nav li {
+        display: block;
+        float: none;
+        width: 100%;
+    }
+    nav li a {
+        border-bottom: 1px solid #666;
+    }
+
+    nav a#pull {  
+        display: block;  
+        background-color: #333; 
+        border-bottom: 1px solid #666; 
+        width: 100%;  
+        position: relative;  
+    }  
+    nav a#pull:after {  
+        content: "\f0c9";
+        font-family: FontAwesome;
+        width: 64px;  
+        height: 64px;  
+        display: inline-block;  
+        position: absolute;  
+        left: 50px;  
+        top: 0px;  
+    }  
+}  
+
+
