@@ -4,6 +4,7 @@
 
 | &nbsp;Queens College&nbsp;                 | &nbsp;Mathematics&nbsp;                | &nbsp;Computer Science&nbsp;                 | &nbsp;Other Classes&nbsp;                    |
 |--------------------------------------------|----------------------------------------|-----------------------------------------------|----------------------------------------------|
+| :----: | :----: | :----: | :----: |
 |    [:school:](#school-queens-college)      |    [:pencil2:](#pencil2-mathematics)   |    [:computer:](#computer-computer-science)   |    [:blue_book:](#blue_book-other-classes)   |
 
 ## :school: Queens College
