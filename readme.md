@@ -10,9 +10,15 @@
 
 ### :pencil2: Mathematics
 
+* SPAN 111-12
+* CMLIT 102W-04
+
 ### :computer: Computer Science
+
+* SPAN 111-12
+* CMLIT 102W-04
 
 ### :blue_book: Other Classes
 
-    * SPAN 111-12
-    * CMLIT 102W-04
+* SPAN 111-12
+* CMLIT 102W-04
