@@ -17,10 +17,14 @@
 
 ### :computer: Computer Science
 
+#### Computer Science I
+
 * CS211 - OOP in C++
 * CS212 - OOP in Java
 * CS220 - Discrete Structures
 * CS240 - Computer Organization & Assembly Language
+
+#### Computer Science II
 
 * CS313 - Data Structures
 * CS316 - Principles of Programming Languages
