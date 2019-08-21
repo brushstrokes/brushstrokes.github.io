@@ -1,10 +1,11 @@
-# Welcome
+# Undergraduate Program
 
-<a href="https://github.com/gil-ryan"><img src="https://badgen.net/badge/github/gil-ryan/red?icon=github"></a><a href="https://gil-ryan.github.io"><img src="https://badgen.net/badge/personal-website/gil-ryan/red"></a>
+Welcome - you'll find most of these classes have their own dedicated repository.
+
+<a href="https://github.com/gil-ryan"><img src="https://badgen.net/badge/github/gil-ryan/red?icon=github"></a><a href="https://gil-ryan.github.io"><img src="https://badgen.net/badge/personal-website/gil-ryan/red"></a><a href="https://brushstrokes.github.io"><img src="https://badgen.net/badge/academic-website/brushstrokes/blue"></a><a href="https://nw-grs.github.io"><img src="https://badgen.net/badge/professional-website/nw-grs/green"></a>
 
 | &nbsp;Queens College&nbsp;                 | &nbsp;Mathematics&nbsp;                | &nbsp;Computer Science&nbsp;                 | &nbsp;Other Classes&nbsp;                    |
 |--------------------------------------------|----------------------------------------|-----------------------------------------------|----------------------------------------------|
-| :----: | :----: | :----: | :----: |
 |    [:school:](#school-queens-college)      |    [:pencil2:](#pencil2-mathematics)   |    [:computer:](#computer-computer-science)   |    [:blue_book:](#blue_book-other-classes)   |
 
 ## :school: Queens College
