@@ -2,22 +2,35 @@
 
 <a href="https://github.com/gil-ryan"><img src="https://badgen.net/badge/github/gil-ryan/red?icon=github"></a><a href="https://gil-ryan.github.io"><img src="https://badgen.net/badge/personal-website/gil-ryan/red"></a>
 
-| &nbsp;Queens College&nbsp;                 | &nbsp;Mathematics&nbsp;                | &nbsp;MComputer Science&nbsp;                 | &nbsp;Other Classes&nbsp;                    |
+| &nbsp;Queens College&nbsp;                 | &nbsp;Mathematics&nbsp;                | &nbsp;Computer Science&nbsp;                 | &nbsp;Other Classes&nbsp;                    |
 |--------------------------------------------|----------------------------------------|-----------------------------------------------|----------------------------------------------|
 |    [:school:](#school-queens-college)      |    [:pencil2:](#pencil2-mathematics)   |    [:computer:](#computer-computer-science)   |    [:blue_book:](#blue_book-other-classes)   |
-
 
 ## :school: Queens College
 
 ### :pencil2: Mathematics
 
-* SPAN 111-12
-* CMLIT 102W-04
+* MATH120 - Discrete Math
+* MATH151 - Calculus I
+* MATH152 - Calculus II
+* MATH231/237 - Linear Algebra
 
 ### :computer: Computer Science
 
-* SPAN 111-12
-* CMLIT 102W-04
+* CS211 - OOP in C++
+* CS212 - OOP in Java
+* CS220 - Discrete Structures
+* CS240 - Computer Organization & Assembly Language
+
+* CS313 - Data Structures
+* CS316 - Principles of Programming Languages
+* CS320 - Theory of Computation
+* CS323 - Design Analysis of Algorithms
+* CS331 - Database Systems
+* CS340 - Operating Systems
+* CS343 - Computer Architecture
+* CS355 - Internet Web Tech
+* CS370 - Software Engineering
 
 ### :blue_book: Other Classes
 
