@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Sets, maps</h1>
+A <b>set</b> is an collection of unique elements.  Unlike lists, you cannot access an element by index.
+<br>A set allows you to efficiently add or remove an element, or check if an element is in the set.
+
+<div class="figure"><img src="symboltable.png" width="450"><br>Source: Sedgewick p. 362</div>
+<br><br>A <b>map</b> (also known as an associative array, dictionary, or symbol table) is a collection of key-value pairs.  The keys are unique.
+<br>A map allows you to efficiently add or remove a pair (by its key),
+update the value of a given key, or look up the value of a given key.
+<br>A set is like a map with only keys and no values.
+
+<br><br><b>Sample code</b>
+<br><a href="code/UsingSetsMaps.java">UsingSetsMaps</a> - Shows how to use Sets and Maps in the JCF.
+<br>(see also <a href="code/UsingSetsMaps.cpp">C++ version</a>)
+<br><a href="code/DuplicateDetection.java">DuplicateDetection</a> - Using a Set to detect duplicates.
+
+<h2>Trees, hash tables</h2>
+Sets and maps are typically implemented with either a <a href="trees.html">tree</a> or a <a href="hash_tables.html">hash table</a>.
+<br><a href="https://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html">TreeSet</a>
+and <a href="https://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html">HashSet</a> (JCF)
+are tree and hash table implementations of the <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Set.html">Set</a> interface.
+<br><a href="https://docs.oracle.com/javase/7/docs/api/java/util/TreeMap.html">TreeMap</a>
+and <a href="https://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html">HashMap</a> (JCF)
+are tree and hash table implementations of the <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Map.html">Map</a> interface.
+
+<br><br>TreeSets and TreeMaps keep their keys in sorted order, and each basic operation takes O(logn) time (worst-case).
+<br>HashSets and HashMaps do not keep their keys in any particular order, and each basic operation takes O(1) time (average-case).
+<br>The Set interface also supports the mathematical set operations union, intersection, and difference.
+
+</div>
+</body>
+</html>

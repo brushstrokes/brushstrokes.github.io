@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>List implementations</h1>
+<b>Sample code</b>
+<br><b>Classes:</b> <a href="classes/ArrayList.java">ArrayList</a> / <a href="classes/SinglyLinkedList.java">SinglyLinkedList</a>
+<br>(<a href="classes/ArrayListInt.java">non-generic ArrayList</a>)
+<br><b>Interface:</b> <a href="classes/List.java">List</a>
+<br>These are simplified implementations of
+<a href="https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">ArrayList</a> /
+<a href="https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html">LinkedList</a> /
+<a href="https://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a>
+from the JCF.
+
+<h2>ArrayList</h2>
+ArrayList is an array implementation of the List interface.
+It has a size and a capacity.
+The size is the number of elements currently being used.
+The capacity is the amount of space currently allocated (in terms of number of elements).
+When it runs out of space, it copies the elements into a new larger array.
+<ul><li>The ArrayList(int capacity) constructor creates an empty list (i.e. the size is 0).</li>
+<li>When growing the array, we increase the capacity by a constant factor.</li></ul>
+
+<h2>LinkedList</h2>
+LinkedList
+is a doubly-linked list implementation of the List interface.
+<ul><li>We do not allow the user to access or create nodes
+because we should not reveal implementation details to the user (an example of encapsulation).
+From the user's point of view, he/she is adding or removing elements, not nodes.
+The Node class is private and nested because a Node only exists as part of a LinkedList.</li>
+<li>This implementation uses a dummy node (aka sentinel) to slightly simplify the code (the JCF implementation does not use a dummy node).</li>
+<li>The JCF implementation is doubly-linked,
+so when accessing an element by index, traversal begins from whichever end is closer to the target index.</li></ul></p>
+
+<div class="figure"><img src="doublylinked.png" width="700"><br>Doubly linked list. Source: geeksforgeeks.org</div>
+<div class="figure"><img src="doublylinkedinsert.png" width="700"><br>Doubly linked list insertion. Source: geeksforgeeks.org</div>
+<div class="figure"><img src="doublylinkeddummy.gif" width="250"><br>Doubly-linked list with dummy nodes.<br>Source: condor.depaul.edu/ntomuro</div>
+<div class="figure"><img src="singlylinkeddummy.gif" width="450"><br>Singly-linked list with dummy node. Source: web.cecs.pdx.edu/~karlaf</div>
+<div class="figure"><img src="circularlinkeddummy.gif" width="450"><br>Source: ironbark.xtelco.net.au</div>
+
+</div>
+</body>
+</html>

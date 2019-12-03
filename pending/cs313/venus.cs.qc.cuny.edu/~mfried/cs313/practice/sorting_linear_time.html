@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Sorting in linear time questions</h1>
+Is it possible to sort 4 elements with 4 comparisons, in the worst-case?  Explain why or why not.
+
+<br><br><b>What is the runtime of each algorithm?  Give your answer in &Theta; notation as a function of n (or n and k).</b>
+<br>Counting sort (n elements, each element in the range of 0 to k-1) (worst-case)
+<br>Bucket sort (n uniformly-distributed elements, n buckets) (average-case)
+
+<br><br>In radix sort, we run counting sort multiple times.
+Suppose we use radix sort (base 10) sort the elements {763, 521, 123, 745, 345}.
+Show the order of the numbers after each sort.
+
+<br><br>Counting sort is an example of a stable sort.  Explain what a stable sort is.
+
+<br><br><b>Multiple choice</b>
+<br>You want to sort 100000 Students by height.  You cannot access their heights,
+but you can call a compareHeights method to compare two Students and see who's taller.  Which algorithm should you use?
+<br>A. Bucket sort
+<br>B. Quicksort
+<br>C. Radix sort
+<br>D. Selection sort
+
+<br><br>In what situation does counting sort perform well?
+<br>A. The array is nearly sorted
+<br>B. The numbers are in a random order
+<br>C. The numbers are uniformly distributed over a known range
+<br>D. The numbers are within a small range
+
+<br><br>In what situation does bucket sort perform well?
+<br>A. The array is nearly sorted
+<br>B. The numbers are in a random order
+<br>C. The numbers are uniformly distributed over a known range
+<br>D. The numbers are within a small range
+
+<h2>Questions to talk about in class</h2>
+You are given a deck of 52 playing cards and you want to sort them as fast as possible.
+You know that each number occurs 4 times.  How would you do it?
+
+<br><br>You want to use radix sort to sort 1000 unsigned integers.  Each integer is in the range of 0 to 2<sup>32</sup>-1.
+What base should you use to minimize the runtime?
+
+</div>
+</body>
+</html>

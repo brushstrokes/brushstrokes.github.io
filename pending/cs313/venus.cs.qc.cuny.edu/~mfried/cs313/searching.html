@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Searching</h1>
+<b>Searching</b> is the process of finding an element within a data structure.
+There are two common ways to search a list, linear search and binary search.
+
+<h2>Linear search</h2>
+<div class="figure""><img src="linearsearch.png" width="500"><br>Linear search. Source: geeksforgeeks.org</div>
+<b>Linear search</b> looks at each element of the list sequentially until it finds the target value.
+<br>The average and worst-case runtime is O(n) because you do at most n comparisons, and n/2 comparisons on average.
+<br>The best-case runtime is O(1) (when the target value is the first element).
+
+<h2>Binary search</h2>
+<div class="figure"><img src="binarysearch.png" width="500"><br>Binary search. Source: geeksforgeeks.org</div>
+<b>Sample Code</b>
+<br><a href="code/BinarySearch.java">BinarySearch</a>
+<br><br><b>Binary search</b> finds a value within a sorted array.  First it compares the value to the middle element.
+<br>Based on the result of this comparison, half the array is eliminated, and the remaining half is searched.
+<br>Half the array is eliminated in each iteration, so the average and worst-case runtime is O(logn).
+<br>Binary search is not efficient for linked lists because we have no fast way to reach the middle element.
+
+<h2>Interpolation search</h2>
+<b>Interpolation search</b> is similar to binary search, but instead of comparing to the middle element,
+<br>we try to predict where the value should be in the remaining section of the list.
+<br>This is similar to how people find words in a dictionary.
+If you're looking for a word that starts with b, you don't start in the middle, you start closer to the beginning.
+<br>The worst-case runtime is O(n), but if the elements are uniformly distributed then the average-case runtime is O(loglogn).</p>
+
+</div>
+</body>
+</html>

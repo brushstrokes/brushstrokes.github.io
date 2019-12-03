@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Sorting questions</h1>
+<b>What is the runtime of each algorithm?  Give your answer in &Theta; notation as a function of n (the number of elements).</b>
+<br>Insertion sort (worst-case)
+<br><span class="red">&Theta;(n<sup>2</sup>)</span>
+<br>Insertion sort (best-case)
+<br><span class="red">&Theta;(n)</span>
+<br>Heapsort (worst-case)
+<br><span class="red">&Theta;(nlogn)</span>
+<br>Mergesort (worst-case)
+<br><span class="red">&Theta;(nlogn)</span>
+<br>Quicksort (worst-case)
+<br><span class="red">&Theta;(n<sup>2</sup>)</span>
+<br>Quicksort (average-case)
+<br><span class="red">&Theta;(nlogn)</span>
+<br>Quickselect (average-case)
+<br><span class="red">&Theta;(n)</span>
+
+<br><br>Explain why some implementations of quicksort use insertion sort as a subroutine.
+<br><span class="red">Insertion sort is used to sort small subarrays because insertion sort is faster for small arrays.</span>
+
+<br><br>Explain how to modify quicksort to guarantee that for all possible inputs, it is very unlikely to perform poorly
+(there may be multiple correct answers).
+<br><span class="red">Answer 1: Choose random pivots.
+<br>Answer 2: Randomly shuffle the array before starting.
+<br>Answer 3: Use introsort (start with quicksort but switch to heapsort if the recursion depth grows too large).</span>
+
+<br><br>Explain what problem the quickselect algorithm solves.
+<br><span class="red">Quickselect finds the kth smallest element of an unsorted array.</span>
+
+<br><br><b>Multiple choice</b>
+You want to sort a 100000-element array, and you know that every element is within 3 spots of its correct spot.  Which algorithm should you use?
+<br>A. Selection sort
+<br>B. Insertion sort
+<br>C. Mergesort
+<br>D. Quicksort
+<br><span class="red">Insertion sort because it performs well if the array is nearly sorted.</span>
+
+<br><br>Write a method
+<br><b>void quicksort(int[] a, int low, int high)</b>
+<br>that sorts the elements from index low to index high (inclusive), using the quicksort algorithm.
+You may assume the existence of a method
+<br><b>int partition(int[] a, int low, int high)</b>
+<br>that partitions the array and returns the index of the pivot.
+All smaller elements will be to the left and all large elements will be to the right.
+You do not have to write the partition method.
+<br><span class="red">Full answer: <a href="../code/Sorting.java">Sorting</a></span>
+
+<br><br>Write a method
+<br><b>void mergesort(int[] a, int low, int high)</b>
+<br>that sorts the elements from index low to index high (inclusive), using the mergesort algorithm.
+You may assume the existence of a method
+<br><b>void merge(int[] a, int low, int mid, int high)</b>
+<br>that merges two sorted ranges, a[low..mid] and a[mid+1..high], into one sorted range a[low..high].
+You do not have to write the merge method.
+<br><span class="red">Full answer: <a href="../code/Sorting.java">Sorting</a></span>
+
+<h2>Questions to talk about in class</h2>
+You are given a 5-element integer array, and you want to sort it as fast as possible.  How would you do it?
+If you already know some sorting algorithms, try to forget them.  Imagine you are trying to solve this problem for the first time.
+<br><span class="red">Insertion sort, because it's fast for small arrays.
+<br>The O(nlogn) algorithms would almost as fast.</span>
+
+<br><br>What if you want to sort 5 playing cards by hand?
+<br><span class="red">It depends how fast you can do each type of operation.</span>
+
+<br><br><b>Nuts and bolts</b>
+<br>You are given n nuts and n bolts.  Every nut matches exactly one bolt.
+You can compare a nut and a bolt, and determine if they match, if the nut is too big, or if the nut is too small.
+You cannot directly compare two nuts or two bolts.
+How do you match every nut to a bolt in as few comparisons as possible?
+<br><span class="red">Choose a nut as a pivot.  Compare each bolt to a nut to find its match and partition the bolts.
+Then use the matching bolt as a pivot to partition the nuts.  Then recursively sort the two halves.
+The number of comparisons is about twice as many as quicksort, so it is O(nlogn).</span>
+
+<br><br><b>Simultaneous minimum and maximum</b>
+<br>We can find the minimum of an unsorted array with n-1 comparisons.
+How many comparisons does it take to find both the minimum and the maximum?
+We can do it with 2n-2 comparisons by first finding the minimum, then the maximum, but can we do better?
+<br><span class="red">If n is odd, initialized smallest and largest to the first element.
+<br>If n is even, begin by comparing the first two elements to initialize smallest and largest.
+<br>For each remaining pair of elements, compare them to each other, then compare the smaller to smallest and the larger to largest.
+<br>We do 3 comparisons for every 2 elements, so the number of comparisons is approximately 3n/2.</span>
+
+</div>
+</body>
+</html>

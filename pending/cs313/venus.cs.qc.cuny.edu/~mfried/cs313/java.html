@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Java review</h1>
+
+<h2>Inheritance</h2>
+A <b>subclass</b> inherits the fields and methods of its <b>superclass</b>, which allows code to be reused.
+<br>The subclass may <b>override</b> some of the methods by having its own method with the same signature.
+<br>The subclass may also have additional fields and methods.
+<br>Inheritance is used when two classes have an "is a" relationship.</p>
+<div class="code">public class Person {
+   String name; // The name field is inherited by Student
+   void foo() {...}
+   ...
+}
+
+public class Student extends Person { // Student is a subclass of Person
+   double gpa;                        // Student has an additional field, gpa
+   void foo() {...}                   // Overrides Person's foo method
+   ...
+}</div>
+
+<p><h2>Abstract classes</h2>
+An abstract class is a class that cannot be instantiated, but can be subclassed.
+<br>It may contain abstract methods (a method without an implementation).
+<br>A non-abstract subclass must implement all of the abstract methods in its superclass.</p>
+
+<p><h2>Interfaces</h2>
+An interface is a collection of methods without method bodies.
+<br>A class may <b>implement</b> an interface by implementing all of the interface's methods.</p>
+
+<h2>Abstract classes vs interfaces</h2>
+A class may only extend one superclass, but may implement multiple interfaces.
+An interface may also extend other interfaces.
+<br>Interfaces are commonly used to define types.  For example, ArrayList implements List in the JCF.
+<br>An interface is like a contract that specifies what the code is supposed to do,
+so other programmers can use Lists in their code without knowing how the List is implemented.
+A programmer may switch from ArrayList to LinkedList, and the code will still work.
+<br>Interfaces can also be used to declare that a class provides some behavior.
+For example, if a class implements Comparable, then instances of the class can be compared.
+<br>Abstract classes may be used to define skeletal implementations for an interface,
+which makes it easier to implement the interface (e.g. AbstractList in the JCF).
+
+<h2>Generics</h2>
+We can create a <b>generic</b> class or interface that works with any type.
+For example, we can write one ArrayList class, and then we can create an ArrayList of Integers, Doubles, or Strings.</p>
+
+<div class="code">public interface List&lt;E&gt; { // E is a type parameter
+   ...
+   boolean add(E e);       // Any class that implements List must implement add
+}
+
+public class ArrayList&lt;E&gt; implements List&lt;E&gt; { // E is a type parameter
+   ...                      
+   public boolean add(E e) {...} // We can use E as the element type
+}</div>
+
+<p>When creating an ArrayList, specify the type inside &lt; &gt;.
+If the type is Integer, imagine that all Es in the class definition are replaced with Integer.
+<br>The type cannot be a primitive, so we must use the Integer <b>wrapper class</b>.
+<br>An int can be automatically converted to an Integer.  This is called <b>autoboxing</b>.
+<br>Creating a generic array is not allowed, but we can create an Object array and cast (see sample code).</p>
+
+<div class="code">ArrayList&lt;Integer&gt; x = new ArrayList&lt;&gt;(); // Each element is an Integer
+x.add(5); // Since x is a list of Integers, this method takes an Integer as a parameter
+
+// An interface can be used as reference type, so we can also write:
+List&lt;Integer&gt; y = new ArrayList&lt;&gt;();
+</div>
+
+<p><b>Sample Code:</b>
+<a href="classes/ArrayList.java">generic ArrayList</a> / <a href="classes/ArrayListInt.java">non-generic ArrayList</a>
+
+<h2>Exceptions</h2>
+An exception is an object that gets <b>thrown</b> when an unexpected event occurs during a program's execution.
+<br>A method may handle an exception with a try-catch block, or throw the exception so another method can handle it.
+<br>If the exception is not handled, the program terminates and prints an error message to the console.
+<br>When an exception is thrown from inside a try block, execution skips ahead to the catch block.
+<br>Exceptions may be checked or unchecked.
+Code that may throw a checked exception must be enclosed by either a try block or a method with a <b>throws</b> clause,
+which specifies that it can throw an exception.</p>
+
+<div class="code">// Handling the exception within the same method
+public void foo() {
+   try {
+      if (...)
+         throw new Exception(); // Code that may throw an exception
+   } catch (Exception e) {
+      // Code to handle the exception (executed only if an Exception was thrown)
+   }
+}</div>
+<p></p>
+<div class="code">// Handling the exception in another method
+public void foo1() {
+   try {
+      foo2(); // foo2 may throw an exception
+   } catch (Exception e) {
+      // Code to handle the exception (executed only if an Exception was thrown)
+   }
+}
+
+public void foo2() throws Exception { // Specify that the method can throw an exception
+   if (...)
+      throw new Exception(); // Code that may throw an exception
+}
+</div>
+
+<h2>Nested classes</h2>
+A nested class is a class defined inside another class.
+If a class is only used by one other class, making it nested can make the code more organized and increase encapsulation.
+For example, a Node class that is only used by a LinkedList class should be nested and private, because other classes should not be able to access it.
+<br>A nested class may either be static or nonstatic.
+An instance of a nonstatic nested class (aka an inner class) can only exist within an instance of the outer class,
+and has access to that object's fields and methods.
+
+</div>
+</body>
+</html>

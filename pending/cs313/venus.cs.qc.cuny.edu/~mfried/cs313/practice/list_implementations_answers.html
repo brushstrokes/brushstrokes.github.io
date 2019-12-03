@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>List implementation questions</h1>
+<b>What is the worst-case runtime of each operation?  Give your answer in &Theta; notation as a function of n (the number of elements).</b>
+<br><b>ArrayList</b>
+<br>Accessing an element by index
+<br><span class="red">&Theta;(1).</span>
+<br>Inserting a new element at the beginning (at index 0)
+<br><span class="red">&Theta;(n) because you have to shift all the elements to the right.</span>
+<br><b>LinkedList</b>
+<br>Accessing an element by index
+<br><span class="red">&Theta;(n) because you have to traverse the list.</span>
+<br>Inserting a new element by index
+<br><span class="red">&Theta;(n) because you have to traverse the list to reach the point of insertion.</span>
+
+<br><br>In the JCF LinkedList implementation, accessing an element by index takes longer for elements close to the middle.  Explain why.
+<br><span class="red">It is a doubly-linked list, so traversal can be done in either direction.
+Traversal begins from whichever end is closer to the index.</span>
+
+<br><br><b>Below is an implementation of a singly-linked list.  Fill in the missing methods.</b>
+<pre>public class LinkedList&lt;E&gt; {
+   private Node&lt;E&gt; first, last;
+   private int size = 0;
+
+   // Creates an empty list.  It's your choice whether or not to use a dummy node.
+   public LinkedList() {
+      <span class="red">See the sample code.</span>
+
+   }
+
+   // Adds the element to the end of the list.
+   public void addLast(E e) {
+      <span class="red">See the sample code.</span>
+
+
+
+
+   }
+
+   // Removes the first occurrence of the specified element, if it is present.
+   public void remove(E e) {
+      <span class="red">Use the equals method to compare element e to each element of the list.
+      If you find the element you want to remove, update the next pointer of the node before the node that you want to delete.
+      Don't forget to update last, if necessary, as well as size.</span>
+
+
+
+   }
+
+   private static class Node&lt;E&gt; {
+      E data;
+      Node&lt;E&gt; next;
+      Node(E data, Node&lt;E&gt; next) {
+         this.data = data;
+         this.next = next;
+      }
+   }
+}
+</pre>
+
+</div>
+</body>
+</html>

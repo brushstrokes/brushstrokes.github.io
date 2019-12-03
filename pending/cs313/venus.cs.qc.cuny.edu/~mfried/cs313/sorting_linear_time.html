@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Sorting in linear time</h1>
+<h2>Introduction to lower bounds</h2>
+A <b>lower bound</b> is a limit to how fast a problem can be solved.
+For example, we can say that finding the maximum of an unsorted array has a lower bound of &Omega;(n),
+because no algorithm solves the problem faster (in the worst case).
+
+<div class="figure"><img src="sortingdecisiontree.png" width="575"><br>Sorting decision tree. Source: cs.princeton.edu</div>
+<h2>Sorting lower bound</h2>
+In a comparison sort, you can only use comparisons to determine the order of elements.
+Comparison sorting has a lower bound of &Omega;(nlogn).
+
+<br><br><b>Proof</b>
+<br>We can represent any comparison sort as a decision tree with n! leaves,
+where each leaf is a possible output of the algorithm (one of the n! possible permutations).
+We begin at the root, and each comparison determines which edge to follow.
+In the worst-case, the number of comparisons is the height of the tree, which is at least ceil(log(n!)) = &Omega;(nlogn).
+
+<br><br>We know that heapsort and mergesort have upper bounds of O(nlogn).
+Therefore heapsort and mergesort are asymptotically optimal,
+which means that their runtimes are within a constant factor of an optimal algorithm.
+
+<div class="code"><b>Proof that log(n!) = &Omega;(nlogn)</b>
+log(n!) = log(n * (n-1) * ... * 1)
+log(n!) = log(n) + log(n-1) ... + log(1)  (log of product = sum of logs)
+log(n!) &ge; log(n) + ... + log(n/2)         (throw out half the terms)
+log(n!) &ge; (n/2) * log(n/2)                (all remaining terms are at least log(n/2)
+log(n!) &ge; (n/2) * (log(n) - 1)
+log(n!) &ge; (nlogn)/2 - n/2
+log(n!) = &Omega;(nlogn)              (the n/2 term is less significant so it can be omitted)
+</div>
+
+<br><br>If we allow other operations (e.g. arithmetic, or using an element as an array index), we can beat this lower bound in some situations.
+
+<br><br><b>Sample code</b>
+<br><a href="code/Sorting.java">Sorting</a> (counting sort, radix sort)
+
+<h2 style="clear:both">Counting sort</h2>
+<div class="figure"><img src="countingsort.png" width="550"><br>Counting sort. Source: brilliant.org</div>
+<b>Counting sort</b> can be used to sort an array of n integers where each integer is in the range 0 to k-1 (or some other small range).
+<ul><li>Count the number of occurrences of each integer (use the element as an array index to update the count in constant time).</li>
+<li>Compute the number of elements less than or equal to each integer.</li>
+<li>Place each element in the correct spot of the output array.  There may be duplicates, so decrement the counter each time.</li></ul>
+
+Example: Suppose there are 8 elements less than or equal to 4.
+If we find a 4, we should place it at index 7.  Then if we find another 4, we should place it at index 6.
+
+<br><br><b>Runtime</b>
+<br>The first and third step each take O(n) time, and the second step takes O(k) time, so in total it takes O(n+k) time.
+If k is O(n), then it runs in O(n) time.
+
+<h2 style="clear:both">Radix sort</h2>
+<div class="figure"><img src="stablesort.png" width="250"><br>Stable sort. Source: wikipedia.org</div>
+<b>Radix sort</b> is useful when the elements can be broken into digits.
+<ul><li>Sort by the least significant digit.</li>
+<li>...</li>
+<li>Sort by the most significant digit.</li></ul>
+It must be a <b>stable</b> sort (usually counting sort).
+A sorting algorithm is stable if numbers with the same value will appear in the output in the same order as they appeared in the input.
+This is necessary in radix sort because suppose we want to sort 13 and 12.
+After sorting by the right digit, 12 is before 13.  After sorting by the left digit, 12 should still be before 13.
+
+<br><br><b>Runtime</b>
+<br>Suppose each number has d digits, and each digit has k possible values (k is the base).
+<br>We run counting sort d times, so the runtime is O(d(n+k)).
+<br>Note that d depends on k.  Each digit consists of k bits, so if each number consists of b bits in total, then d = b/log(k).
+<br>We should choose k to minimize the runtime.
+<br>If b = O(logn), then choosing k = n gives us a runtime of O(n).
+<div class="figure" style="float:left"><img src="radixsort.jpg" width="328"><br>Radix sort in base 10. Source: cs.uah.edu/~rcoleman</div>
+
+<h2 style="clear:both">Bucket sort</h2>
+<div class="figure"><img src="bucketsort.png" width="400"><br>Bucket sort. Source: geeksforgeeks.org</div>
+<b>Bucket sort</b> is useful when the elements are uniformly distributed over a known range.
+<ul><li>Divide the range into n equal-sized subintervals called buckets.</li>
+<li>Distribute the elements into the buckets.</li>
+<li>Sort each bucket and concatenate the buckets.</li></ul>
+If the elements are uniformly distributed, then we expect each bucket to be small,
+so each bucket can be sorted quickly with insertion sort,
+and the average-case runtime is O(n). (proof: Cormen p. 202)</p>
+
+</div>
+</body>
+</html>

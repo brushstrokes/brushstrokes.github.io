@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Sorting questions</h1>
+<b>What is the runtime of each algorithm?  Give your answer in &Theta; notation as a function of n (the number of elements).</b>
+<br>Insertion sort (worst-case)
+<br>Insertion sort (best-case)
+<br>Heapsort (worst-case)
+<br>Mergesort (worst-case)
+<br>Quicksort (worst-case)
+<br>Quicksort (average-case)
+<br>Quickselect (average-case)
+
+<br><br>Explain why some implementations of quicksort use insertion sort as a subroutine.
+
+<br><br>Explain how to modify quicksort to guarantee that for all possible inputs, it is very unlikely to perform poorly
+(there may be multiple correct answers).
+
+<br><br>Explain what problem the quickselect algorithm solves.
+
+<br><br><b>Multiple choice</b>
+You want to sort a 100000-element array, and you know that every element is within 3 spots of its correct spot.  Which algorithm should you use?
+<br>A. Selection sort
+<br>B. Insertion sort
+<br>C. Mergesort
+<br>D. Quicksort
+
+<br><br>Write a method
+<br><b>void quicksort(int[] a, int low, int high)</b>
+<br>that sorts the elements from index low to index high (inclusive), using the quicksort algorithm.
+You may assume the existence of a method
+<br><b>int partition(int[] a, int low, int high)</b>
+<br>that partitions the array and returns the index of the pivot.
+All smaller elements will be to the left and all large elements will be to the right.
+You do not have to write the partition method.
+
+<br><br>Write a method
+<br><b>void mergesort(int[] a, int low, int high)</b>
+<br>that sorts the elements from index low to index high (inclusive), using the mergesort algorithm.
+You may assume the existence of a method
+<br><b>void merge(int[] a, int low, int mid, int high)</b>
+<br>that merges two sorted ranges, a[low..mid] and a[mid+1..high], into one sorted range a[low..high].
+You do not have to write the merge method.
+
+<h2>Questions to talk about in class</h2>
+You are given a 5-element integer array, and you want to sort it as fast as possible.  How would you do it?
+If you already know some sorting algorithms, try to forget them.  Imagine you are trying to solve this problem for the first time.
+
+<br><br>What if you want to sort 5 playing cards by hand?
+
+<br><br><b>Nuts and bolts</b>
+<br>You are given n nuts and n bolts.  Every nut matches exactly one bolt.
+You can compare a nut and a bolt, and determine if they match, if the nut is too big, or if the nut is too small.
+You cannot directly compare two nuts or two bolts.
+How do you match every nut to a bolt in as few comparisons as possible?
+
+<br><br><b>Simultaneous minimum and maximum</b>
+<br>We can find the minimum of an unsorted array with n-1 comparisons.
+How many comparisons does it take to find both the minimum and the maximum?
+We can do it with 2n-2 comparisons by first finding the minimum, then the maximum, but can we do better?
+
+</div>
+</body>
+</html>

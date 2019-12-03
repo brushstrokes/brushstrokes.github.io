@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Shortest paths questions</h1>
+<div class="figure"><img src="../weightedgraph.png" width="344"><br>Weighted undirected graph. Source: cs.usfca.edu/~galles</div>
+Suppose you run Dijkstra's algorithm on the weighted undirected graph pictured to the right, starting at vertex 2.
+<br>a) Show what the distance array looks like after you initialize it.
+<br>b) Show what the distance array looks like after updating vertex 2's neighbors' distances.
+<br>c) Show what the distance array looks like after picking the next minimum-distance vertex and updating its neighbors' distances.
+
+<br><br>You are given a flight graph, where vertices are cities and edges are flights.  Edge weights are the prices of the flights.
+Some prices are negative because certain airlines will pay you to fly (but there are no negative cycles).
+Suppose you want to find the cheapest path between all pairs of cities.  Which algorithm would you use?
+
+<br><br>Suppose you implement Dijkstra's shortest path without a priority queue.
+This would allow you to perform each "find minimum-distance vertex" operation in O(V) time (by doing a linear search),
+and each "update distance" operation in O(1) time.
+What is the worst-case runtime of this implementation as a function of V (number of vertices) and E (number of edges)?
+
+<h2>Questions to talk about in class</h2>
+Suppose you want to solve the single-destination shortest path problem on a directed graph (finding the shortest path from each vertex to some vertex t).
+Explain how you can use Dijktra's algorithm to solve it (by modifying the algorithm and/or the graph).
+
+</div>
+</body>
+</html>

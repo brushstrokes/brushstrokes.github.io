@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<div class="figure"><img src="hashfunction.png" width="300"><br>Hash function. Source: wikipedia.org</div>
+<p><h1>Hash tables</h1>
+If the keys of a map are small integers, we can implement the map with an array, where key k is stored at index k.
+If the keys are large, or not integers, we can use a hash table to efficiently implement the map.
+A <b>hash table</b> uses a <b>hash function</b> to transform each key into an array index in the range [0, M-1], where M is the array size.
+The array size may be much smaller than the number of possible keys.
+When two keys hash to the same array index, it is called a <b>collision</b>.
+Two common collision resolution methods are <b>separate chaining</b> and <b>open addressing</b>.
+<br><br>The basic operations take O(1) time (average-case), but unlike binary search trees, we cannot efficiently iterate through a hash table in order.
+
+<br><div class="figure" style="clear:both"><img src="hashfrequencies.png" width="500">
+<br>Each hash value should be equally likely. Source: Sedgewick p. 463</div>
+<h2>Hash functions</h2>
+A hash function must be consistent; equal keys should hash to the same array index.
+It should uniformly distribute the keys to minimize the number of collisions
+(in other words, each key is equally likely to hash to each array index).
+A hash function should be efficient to calculate.
+
+<br><br>Hash functions often consist of two parts:
+<ul><li>Convert the key to an integer hash code (not necessarily within range).</li>
+<li>Map the integer to the range [0, M-1].  This can be done by modding by M.
+<br>M is sometimes chosen to be prime to disperse the keys more evenly, in case there are patterns in the input.</li></ul>
+
+<div class="figure"><img src="polynomialhash.gif" width="400"><br>Computing the polynomial hash code for "Hello".<br>Source: mathcs.emory.edu/~cheung</div>
+For integers, computing the hash code is simple, because we can just use the integer itself.
+<br><br>For strings, a common technique is to use a polynomial hash code,
+where we interpret each character as a digit of a base-a number (Java's String class uses a=31).
+
+<h2 style="clear:both">Separate chaining</h2>
+<div class="figure"><img src="separatechaining.png" width="400"><br>Separate chaining. Source: wikipedia.org</div>
+We place all entries that hash to the same array index in a bucket, usually implemented as a linked list.
+<ul><li><b>Searching:</b> First compute the array index, then search the bucket.</li>
+<li><b>Insertion/updating:</b> Search for the key.  If found, update the entry.  Otherwise insert the entry.</li>
+<li><b>Deletion:</b> Search for the key.  If found, delete the entry.</li></ul>
+
+<b>Runtime</b>
+<br>If there are M buckets and n keys, the average number of keys per bucket is n/M.  This ratio is called the <b>load factor</b>.
+<br>In an unsuccessful search, we have to look at every key in a bucket.
+If we assume that the key is equally likely to hash to each bucket,
+the expected runtime is O(n/M).  If n is O(M), the expected runtime is O(1).
+When the load factor grows too large, we can increase the array size and reinsert all of the keys to keep the load factor small (HashMap uses a threshold of 0.75 by default).
+Reinserting takes amortized constant time because we increase the array size by a constant factor.
+<br><br>If the buckets are linked lists, the worst-case runtime is O(n) (when every key hashes to the same bucket).
+Since Java 8, HashMap avoids O(n) worst-case by converting buckets to self-balancing trees when they grow too large.
+With a good hash function, it's very unlikely for a bucket to contain a large number of elements.
+
+<h2>Separate chaining implementation</h2>
+<b>Sample code</b>
+<br><b>Classes:</b> <a href="classes/HashSet.java">HashSet</a> / <a href="classes/HashMap.java">HashMap</a>
+<br><b>Interfaces:</b> <a href="classes/Set.java">Set</a> / <a href="classes/Map.java">Map</a>
+<br>These are simplified implementations of <a href="https://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html">HashSet</a>
+and <a href="https://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html">HashMap</a> from the JCF.
+Resizing is not implemented.
+
+<h2>Open addressing</h2>
+<div class="figure"><img src="linearprobing.png" width="380"><br>Linear probing. Source: wikipedia.org
+<br><br><img src="clustering.png" width="318"><br>Source: Sedgewick p. 472</div>
+All entries are stored in the array itself, so the number of keys in the hash table cannot be more than the array size.
+To insert an entry, we begin by computing the hash.  If the slot is already occupied,
+we check a sequence of slots until we find an empty slot (this is called probing).
+A few well-known probe sequences are linear probing, quadratic probing, and double hashing.
+
+<h2>Linear probing</h2>
+<b>Insertion:</b> Starting at the computed hash, if the slot is already occupied,
+try each successive slot one at a time until we find either the key or an empty slot, wrapping around the end of the table if necessary.
+<br><br><b>Searching:</b> Starting at the computed hash, check each slot until we either find either the key an empty slot.
+<br><br><b>Deletion:</b> Search for the entry, then delete it.  The entry may be in the middle of a cluster.
+We cannot mark it as empty, because then we may be unable to find entries in the right portion of the cluster.
+Instead, we can mark it with a special "deleted" value.  We can pass over this slot when searching, but it is still a valid slot for insertion.
+If we want to avoid wasting space, another option is to reinsert all keys in the cluster to the right of the deleted key.
+
+<br><br>A problem with linear probing is that entries tend to cluster into contiguous groups,
+because if there is a cluster of i entries, the spot after the cluster will be filled next with probability (i+1)/M.</p>
+
+<h2>Linear probing implementation</h2>
+<b>Sample code</b>
+<br><b>Classes:</b> <a href="classes/HashSetLinearProbing.java">HashSetLinearProbing</a>
+<br><b>Interfaces:</b> <a href="classes/Set.java">Set</a>
+<br>Resizing is not implemented.
+
+</div>
+</body>
+</html>

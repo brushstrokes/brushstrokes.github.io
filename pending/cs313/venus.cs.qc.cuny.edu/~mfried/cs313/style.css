@@ -1,0 +1,11 @@
+body {background-color: #EEE;}
+.main {width: 900px; height: 100%; margin: auto; text-align: center;}
+.main2 {width: 900px; height: 100%; margin: auto; text-align: left;}
+.table {display: table; width: 100%; border: 1px solid #888;}
+.row {display: table-row;}
+.row-header {display: table-row; font-weight: bold; text-align: center;}
+.cell-left {display: table-cell; width: 10%; padding: 5px; border: 1px solid #888; text-align: center; vertical-align: middle;}
+.cell {display: table-cell; width: 30%; padding: 5px; border: 1px solid #888; text-align: left;}
+.code {display: inline-block; font-family: monospace; white-space: pre-wrap; background-color: #DDE; padding: 5px; border: 1px solid #888;}
+.figure {float: right; text-align: center; margin: 5px;}
+.red {color: #F00;}

@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Shortest paths</h1>
+The <b>shortest path</b> from vertex s to vertex t in a weighted graph is the path from s to t with the minimum total weight.
+For example, in a road map graph, we might want to know the shortest way to get from one intersection to another.
+
+<br><br>If the graph is unweighted, we can find the shortest path by performing a breadth-first search from s,
+but this does not work for weighted graphs.
+A few well-known algorithms are Dijkstra's algorithm, the Bellman-Ford algorithm, and the Floyd-Warshall algorithm.
+
+<h2>Single-source shortest path</h2>
+<b>Dijkstra's algorithm</b> solves the single-source shortest path problem.  The weights must be non-negative.
+<br>Given a source vertex s, it finds the shortest path from s to every other vertex.
+
+<br><br>As we run the algorithm, we have a set of "known" vertices (vertices for which we know the shortest path) and a set of "unknown" vertices.
+<br>For each vertex v, we keep track of the shortest distance from s to v that we've found so far.
+
+<br><br><b>Algorithm</b>
+<ul><li>Initialize distance[s] = 0 and distance[v] = &infin; for all v &ne; s.</li>
+<li>While there are unknown vertices:
+<ul><li>Choose the unknown vertex v with the minimum distance, and mark it as known</li>
+<li>For each unknown neighbor w of vertex v:
+<ul><li>// Check if we can reduce w's distance by reaching it through v
+<br>distance[w] = min(distance[w], distance[v] + (weight of edge from v to w))</li></ul></ul></ul>
+
+<b>Example (see image below)</b>
+<br>(a) Initialize distance[s] = 0, other distances = &infin;.
+<br>(b) Choose minimum-distance unknown vertex, s (s now becomes known).  Update distances of s's unknown neighbors (t, y).
+<br>(c) Choose minimum-distance unknown vertex, y (y now becomes known).  Update distances of y's unknown neighbors (t, x, z).
+<br>(d) Choose minimum-distance unknown vertex, z (z now becomes known).  Update distances of z's unknown neighbors (x).
+<br>(e) Choose minimum-distance unknown vertex, t (t now becomes known).  Update distances of t's unknown neighbors (x).
+<br>(f) Choose minimum-distance unknown vertex, x (x now becomes known).  No distances to update.  Finished.
+<div class="figure" style="float:left"><img src="dijkstra.png" width="700"><br>Dijkstra's shortest path. Source: Cormen p. 659
+<br>The unknown vertices (stored in the priority queue) are white.  The known vertices are black.
+<br>The minimum-distance unknown vertex is gray.  Vertices are labeled with their current distances.</div>
+
+<br style="clear:both"><br>
+<b>Runtime</b>
+<br>Suppose the graph has V vertices and E edges.
+<br>We perform V "find minimum-distance vertex" operations, and at most E "update distance" operations.
+If we use a priority queue implemented with a min heap (the distance is the priority),
+each operation takes O(logV) time, so the runtime is O((V+E)logV).
+<br>This can be improved to O(VlogV + E) if we use a fibonacci heap (not covered in class).
+
+<br><br>How can we implement "update distance"?  See Sedgewick pp. 323-333 for a priority queue implementation that allows changing priorities.
+<br>A simpler implementation is just add a new entry to the priority queue, and ignore the outdated entry when we reach it.
+
+<h2>All-pairs shortest path</h2>
+Suppose we want to know the shortest path from s to t for all pairs s and t.
+<br>One option is to run Dijkstra's algorithm multiple times, once for each vertex.
+
+<br><br>Another option is to use the <b>Floyd-Warshall algorithm</b>,
+which computes the shortest path between all vertex pairs.
+It is easier to implement and runs in O(V<sup>3</sup>) time.
+It works even if there are negative weights, but it does not work if there are negative cycles.
+For a dense graph (a graph with many edges) it can be faster than running Dijkstra's algorithm V times.
+It is one of the few graph algorithms typically implemented with an adjacency matrix.
+
+<br><br>In each step, we introduce a new possible intermediate vertex k.
+<br>Then we look at all other vertex pairs and check if their distance can be reduced by going through k.
+
+<br><br><b>Algorithm</b></p>
+<div class="code">for k = 0 to V-1
+   for i = 0 to V-1
+      for j = 0 to V-1
+         through_k = weight[i][k] + weight[k][j]
+         weight[i][j] = min(weight[i][j], through_k)
+</div>
+<p>weight is initially a matrix of edge weights (the weight is &infin; if there is no edge).
+When the algorithm finishes, it is a matrix of shortest path distances.
+
+</div>
+</body>
+</html>

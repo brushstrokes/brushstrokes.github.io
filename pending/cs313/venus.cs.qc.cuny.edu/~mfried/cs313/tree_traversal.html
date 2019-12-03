@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Tree traversal</h1>
+<b>Tree traversal</b> is the process of visiting each node in a tree.
+<br>By "visit" we mean performing an action, e.g. updating or doing a calculation.
+<br>A tree consists of a root with pointers to subtrees.
+This recursive structure makes it easy to traverse a tree recursively.
+
+<div class="figure"><img src="treetraversal.png" width="600"><br>Tree traversal. Source: cs-people.bu.edu/tvashwin
+<br><br><img src="levelorder.png" width="600"><br>Level-order traversal. Source: cs-people.bu.edu/tvashwin</div>
+<h2>Traversal methods</h2>
+The order in which we visit the nodes depends on the traversal method.
+Trees are usually traversed from left to right.
+
+<ul><li><b>Pre-order</b>
+<ol><li>Visit the root.</li>
+<li>Traverse the subtrees.</li></ol></li>
+<li><b>Post-order</b>
+<ol><li>Traverse the subtrees.</li>
+<li>Visit the root.</li></ol></li>
+<li><b>In-order (binary trees)</b>
+<ol><li>Traverse the left subtree.</li>
+<li>Visit the root.</li>
+<li>Traverse the right subtree.</li></ol></li>
+<li><b>Level-order</b>
+<ol><li>Visit all nodes at depth d before visiting nodes at depth d + 1.</li><ol></ul>
+
+The first three are depth-first traversals, and can be implemented with recursion.
+<br>Level-order is a breadth-first traversal, and can be implemented with a queue.
+
+<h2>Traversal implementation</h2>
+<b>Sample code</b>
+<br><a href="code/TraversableTree.java">TraversableTree</a>
+<br>A simple tree class with an add method and 4 traversal methods.</p>
+
+<div class="code"><b>Level-order traversal algorithm</b>
+add root to an empty queue
+while the queue is not empty:
+   remove the front node, visit it, and add its children to the queue
+</div>
+
+<h2>Example uses</h2>
+<ul><li><b>Pre-order</b> traversal may be used to copy a tree.</li>
+<li><b>Post-order</b> traversal may be used to calculate disk space, because you calculate the space of sub-directories before parent directories.</li>
+<li><b>In-order</b> traversal may be used to visit the nodes of a <a href="binary_search_trees.html">binary search tree</a> in sorted order.</li>
+<li><b>Level-order</b> traversal may be used to find the path with the fewest edges between two nodes in a graph.</li></ul>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Stacks, queues questions</h1>
+<b>Which ADT can be described as last-in-first-out?</b>
+
+<br><br><b>Which ADT can be described as first-in-first-out?</b>
+
+<br><br><b>What is the worst-case runtime of each operation?  Give your answer in &Theta; notation as a function of n (the number of elements).</b>
+<br><b>Linked list queue</b>
+<br>Enqueue
+<br>Dequeue
+<br><b>Array queue (the capacity is doubled when full)</b>
+<br>Enqueue
+<br>Dequeue
+
+<br><br><b>Starting with an empty stack S, which values are returned by the pop() operations in the following code?</b>
+<pre>S.push(3);
+S.push(4);
+S.pop();
+S.push(5);
+S.pop();</pre>
+
+<br><b>Starting with an empty queue Q, which values are returned by the dequeue() operations in the following code?</b>
+<pre>Q.enqueue(3);
+Q.enqueue(4);
+Q.dequeue();
+Q.enqueue(5);
+Q.dequeue();</pre>
+
+<br><b>What do we mean when we say that an array stack's push operation takes amortized constant time?</b>
+<br>A. Push always takes O(1) time.
+<br>B. Push takes expected O(1) time, but it can take O(n) for every push if we're unlucky.
+<br>C. A sequence of n push operations into an initially empty stack is guaranteed to take O(n) time.
+
+<h2>Questions to talk about in class</h2>
+<b>Properly matched parentheses</b>
+<br>Write a method
+<br><b>boolean valid(String s)</b>
+<br>that returns true if the string consists only of properly matched parentheses and brackets.
+Every ( must be closed by ) and every [ must be closed by ].
+They must be closed in the correct order, and there cannot be extra ) or ] that do not close anything.
+
+<br><br>Examples:
+<br>Valid: ()[]
+<br>Valid: ([])
+<br>Invalid: (][)
+<br>Invalid: ())
+
+<br><br><b>Expression evaluation</b>
+<br>A <b>fully parenthesized</b> arithmetic expression is either a number, or in the form
+<br>( fully_parenthesized_arithmetic_expression operator fully_parenthesized_arithmetic_expression )
+<br><br>Example:
+<br>( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )
+<br>Expressions like 1 + 2 * 3, which rely on precedence, are not allowed.
+
+<br><br>Explain an algorithm to evaluate such an expression.
+
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Hash tables questions</h1>
+What is the average-case runtime of inserting an element into a hash table (using separate chaining)?
+Give your answer in &Theta; notation as a function of n (the number of elements).  Assume that the number of buckets is always more than n.
+<br><span class="red">&Theta;(1)</span>
+
+<br><br>In what situation would you want to use a binary search tree instead of a hash table to implement a set?
+<br><span class="red">If you want to iterate through the elements in sorted order.</span>
+
+<br><br>Which is NOT an important property of a good hash function?
+<br>A. Equal keys must always have the same hash
+<br>B. Unequal keys must never have the same hash
+<br>C. The hashes should be uniformly distributed
+<br>D. The hashes should be efficient to compute
+<br><span class="red">Unequal keys must never have the same hash.</span>
+
+<br><br>Is this a good hashCode method?  Explain your answer.
+<pre>public int hashCode() {
+   return new Random().nextInt(); // Returns a random 32-bit integer
+}</pre>
+<span class="red">No because it is not consistent.  Equal keys must always have the same hash.</span>
+
+<br><br>If a hash table has 10 buckets, and every bucket contains exactly 5 keys, what is the load factor?
+<br><span class="red">5.  The load factor is the average number of keys per bucket.</span>
+
+<br><br>If you want your hash table to allow load factors greater than 1, would you use separate chaining or open addressing?  Explain your answer.
+<br><span class="red">Separate chaining.
+In open addressing, the elements are stored in the array itself, so each bucket contains at most 1 element.</span>
+
+<br><br>When implementing linear probing, when we delete an entry, we mark the slot as "deleted" rather than empty.  Explain why.
+<br><span class="red">If we mark an element in the middle of a cluster as empty,
+there may be elements in the right portion of the cluster that we will not be able to find when we search.</span>
+
+<br><br>Show what an initially empty hash table (using separate chaining)
+will look like after you insert all of the following elements in the given order.
+There are 7 buckets implemented as linked lists, and the hash function is hash(x) = x % 7.  There is no resizing.
+<br>3, 9, 5, 10, 11, 2
+<br><span class="red">You can use the animations to see the correct answer.</span>
+
+<br><br>Show what an initially empty hash table (using open addressing with linear probing)
+will look like after you insert all of the following elements in the given order.
+The array size is 7, and the hash function is hash(x) = x % 7.  There is no resizing.
+<br>3, 9, 5, 10, 11, 2
+<br><span class="red">You can use the animations to see the correct answer.</span>
+
+</div>
+</body>
+</html>

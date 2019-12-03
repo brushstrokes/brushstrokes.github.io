@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Homework 2: using sets and maps</h1>
+You have been given the following code:
+<br><a href="HW2.java">HW2.java</a>
+<br>Input files: <a href="imdb.txt">imdb.txt</a> / <a href="sight_and_sound.txt">sight_and_sound.txt</a>
+ / <a href="3_lists.txt">3_lists.txt</a>
+<br>Sample output: <a href="output_intersection.txt">output_intersection.txt</a> / <a href="output_frequent.txt">output_frequent.txt</a>
+/ <a href="output_groupByNumChars.txt">output_groupByNumChars.txt</a>
+
+<br><br>Three of the methods in HW2.java are incomplete.  Write the code so it works correctly.  You should submit one file, HW2.java.
+
+<br><br>Do not change the method headers.  Each method should print the output to the console.  They should not return anything.
+<br>The purpose of this assignment is to learn how to use the JCF classes (HashSet, HashMap, TreeSet, TreeMap).
+You do not need to implement these classes.
+
+<br><br><b>public static List&lt;String&gt; getList(String filename)</b>
+<br>This method has been done for you.  It takes a filename as a parameter and returns a List of movies.
+<br>Each file contains one movie per line.  3_lists.txt has duplicates because it contains 3 lists (the other files do not have duplicates).
+
+<br><br><b>public static void intersection(List&lt;String&gt; list1, List&lt;String&gt; list2)</b>
+<br>Print all movies that occur in both lists.  The order is not important.
+<br>The expected runtime must be O(n) where n is the total number of movies in the lists.
+<br>Do not sort the movies because it is too slow.
+Use a HashSet to store one of the lists, so you can search the HashSet efficiently.
+<br>You may assume that the expected runtime of searching or inserting into a hash table is O(1).
+<br>Do not call the list's contains method, because it is too slow.
+
+<br><br><b>public static void frequent(List&lt;String&gt; list, int k)</b>
+<br>Print all movies in the list that occur at least k times.  The order is not important.
+<br>Print the movie followed by the number of occurrences in parentheses, as in the sample output.
+<br>The expected runtime must be O(n) where n is the total number of movies in the list.
+<br>Do not sort the movies.  Use a HashMap to count occurrences (the key is the movie, the value is the number of occurrences).
+<br>For each movie, check if it's a key in the map.  If it is, update its value.  Otherwise add a new entry to the map.
+<br>Then iterate through the map and print the frequent movies.
+See <a href="../code/UsingSetsMaps.java">UsingSetsMaps</a> for an example of how use a for-each loop with a map.
+
+<br><br><b>public static void groupByNumChars(List&lt;String&gt; list)</b>
+<br>Print all movies in the list, grouped by number of characters.
+<br>All movies with the same number of characters should be printed on the same line, and movies with fewer characters should be printed first.
+<br>The runtime must be O(nlogn) where n is the number of movies in the list.
+
+<br><br>There is more than one way to solve this problem, but one way is to use a map.
+The key is the number of characters, and the value is a list of movies with that number of characters.  You can declare it like this:
+<br>Map&lt;Integer, List&lt;String&gt;&gt; map = new ... // Choose the appropriate map class
+
+<br><br>For each movie, you can use the String class's length function to get the number of characters.
+<br>If the map doesn't already have an entry for this length, create a new entry (use the map's put method).
+<br>If the map already has an entry for this length, first call the map's get method (which returns a reference to a list), then add the movie to the list.
+<br><br>Do not use a single String to store more than one movie, because it will slow down the runtime (but a StringBuilder is ok).
+
+</div>
+</body>
+</html>

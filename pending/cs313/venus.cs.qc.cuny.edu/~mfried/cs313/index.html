@@ -1,0 +1,258 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main">
+
+<h1>CS313: Data structures</h1>
+
+<div class="table">
+
+<div class="row-header">
+<div class="cell">Course information</div>
+<div class="cell">Grading</div>
+</div>
+
+<div class="row"><div class="cell">
+Professor: Michael Fried
+<br><a href="syllabus.doc">Syllabus</a>
+<br>Office hours: Tues/Thur 4:30-4:50, or after 6pm (SB A201)
+<br>You may also email me questions</div>
+<div class="cell"><a href="letter_grades.html">Info about letter grades and curves</a>
+<br>Midterm: 40%
+&emsp;Final: 40%
+&emsp;Homework: 20%
+<br><a href="hw/homework.html">Homework rules</a> (approximately 4 HWs)
+<br>Email homework to <img src="../email.png"></div>
+</div>
+
+</div>
+
+<p><span class="red">The final exam will be in the usual classroom.
+<br>If you are in the 1:40-2:55 section, the exam is May 16, 1:45-3:45pm.
+<br>If you are in the 3:10-4:25 section, the exam is May 21, 1:45-3:45pm.</span>
+<br>The dates in the leftmost column are approximate dates.
+The midterm date will be announced at least 2 weeks in advance.
+<br>Sample code: <a href="classes">data structure implementations</a>, <a href="classes_with_iterators">iterators</a>, <a href="code">other sample code</a>
+<br><a href="animations.html">Data structure and algorithm animations</a>
+
+<h2>Schedule</h2></p>
+
+<div class="table">
+
+<div class="row-header">
+<div class="cell-left">Date</div>
+<div class="cell">Notes</div>
+<div class="cell">Readings (optional)
+<br>(<a href="books.html">info about books</a>)</div>
+<div class="cell">Homework and practice problems
+<br>(practice problems are not graded)</div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>1/29</div>
+<div class='cell'><a href='intro.html'>Intro to data structures: abstract data types and implementations</a></div>
+<div class='cell'>Skiena p. 65 (data structures)<br>Sedgewick pp. 64-65 (abstract data types)<br>Goodrich p. 62 (abstraction, encapsulation, modularity)</div>
+<div class='cell'>-</div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>1/31</div>
+<div class='cell'><a href='runtime.html'>Runtime analysis and big O notation</a></div>
+<div class='cell'>Skiena pp. 31-41 (algorithm analysis)<br>Goodrich pp. 150-155, 164-167 (algorithm analysis)<br>Cormen pp. 23-28 (analyzing algorithms), 43-49 (growth of functions)</div>
+<div class='cell'><a href='practice/runtime.html'>Practice problems</a> / <a href='practice/runtime_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>2/5</div>
+<div class='cell'><a href='searching.html'>Searching: linear, binary, and interpolation</a></div>
+<div class='cell'>Goodrich pp. 196-197 (binary search)<br>Skienna pp. 132-133 (binary search)</div>
+<div class='cell'><a href='practice/searching.html'>Practice problems</a> / <a href='practice/searching_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>2/7</div>
+<div class='cell'><a href='lists.html'>List ADT, arrays, and linked lists</a></div>
+<div class='cell'>Skiena pp. 66-71 (continuous vs. linked data structures)<br>Sedgewick pp. 18-20 (arrays)<br>Goodrich pp. 20-21 (arrays), 258 (list ADT)</div>
+<div class='cell'><a href='practice/lists.html'>Practice problems</a> / <a href='practice/lists_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>2/14</div>
+<div class='cell'><a href='java.html'>Java review</a></div>
+<div class='cell'>Goodrich pp. 64-96 (object-oriented design)<br>oracle.com tutorials: <a href='https://docs.oracle.com/javase/tutorial/java/javaOO/index.html'>classes and objects</a>, <a href='https://docs.oracle.com/javase/tutorial/java/IandI/index.html'>interfaces and inheritance</a>, <a href='https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html'>exceptions</a>, <a href='https://docs.oracle.com/javase/tutorial/collections/'>JCF</a></div>
+<div class='cell'>-</div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>2/19</div>
+<div class='cell'><a href='list_implementations.html'>List implementations: ArrayList and LinkedList</a></div>
+<div class='cell'>Goodrich pp. 260-265 (ArrayLists), 122-127, 132-137 (linked lists)<br>Sedgewick pp. 142-146 (linked lists)<br>Cormen pp. 236-240 (linked lists)</div>
+<div class='cell'><a href='practice/list_implementations.html'>Practice problems</a> / <a href='practice/list_implementations_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>2/21</div>
+<div class='cell'><a href='stacks_queues_deques.html'>Stack, queue, and deque ADTs,<br>ArrayDeque implementation</a></div>
+<div class='cell'>Goodrich pp. 226-251 (stacks, queues, deques)<br>Sedgewick pp. 126-153 (stacks, queues)<br>Cormen pp. 232-235 (stacks, queues)</div>
+<div class='cell'>***<a href='hw/hw1.html'>Homework 1</a>*** (due Feb 28)<br><br><a href='practice/stacks_queues_deques.html'>Practice problems</a> / <a href='practice/stacks_queues_deques_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>2/26</div>
+<div class='cell'><a href='list_comparison.html'>ArrayList vs ArrayDeque vs LinkedList comparison</a></div>
+<div class='cell'>Sedgewick pp. 198-199 (amortized analysis)<br>Goodrich pp. 265-268 (amortized analysis)<br>Cormen pp. 451-455 (amortized analysis)</div>
+<div class='cell'>-</div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>2/28</div>
+<div class='cell'><a href='iterators.html'>Iterators, iterator implementation</a></div>
+<div class='cell'>Sedgewick pp. 138-141 (iterators)<br>Goodrich pp. 282-285 (iterators)</div>
+<div class='cell'><a href='practice/iterators.html'>Practice problems</a> / <a href='practice/iterators_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>3/5</div>
+<div class='cell'><a href='sets_maps.html'>Set and map ADTs</a></div>
+<div class='cell'>Goodrich pp. 402-404 (maps), 445-447 (sets)<br>Sedgewick pp. 361-363 (maps)<br>Skiena pp. 72-73 (maps)</div>
+<div class='cell'>***<a href='hw/hw2.html'>Homework 2</a>*** (due Mar 14)<br><br><a href='practice/sets_maps.html'>Practice problems</a> / <a href='practice/sets_maps_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>3/7</div>
+<div class='cell'><a href='trees.html'>Trees, binary trees</a></div>
+<div class='cell'>Goodrich pp. 308-330 (trees)</div>
+<div class='cell'>-</div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>3/12</div>
+<div class='cell'><a href='tree_traversal.html'>Tree traversal, traversal implementation</a></div>
+<div class='cell'>Goodrich pp. 334-347 (tree traversal)</div>
+<div class='cell'><a href='practice/tree_traversal.html'>Practice problems</a> / <a href='practice/tree_traversal_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>3/14</div>
+<div class='cell'><a href='binary_search_trees.html'>Binary search trees</a></div>
+<div class='cell'>Sedgewick pp. 396-401, 410-411 (BSTs)<br>Goodrich pp. 460-471 (BSTs)<br>Cormen pp. 286-298 (BSTs)<br>Skiena pp. 77-82 (BSTs)</div>
+<div class='cell'><a href='practice/binary_search_trees.html'>Practice problems</a> / <a href='practice/binary_search_trees_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>3/19</div>
+<div class='cell'>Midterm (Mar 26)</div>
+<div class='cell'>-</div>
+<div class='cell'><a href='practice/midterm.html'>Midterm advice</a> (the list of topics might be changed slightly)</div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>3/21</div>
+<div class='cell'><a href='self_balancing_trees.html'>Self-balancing trees, AVL trees</a></div>
+<div class='cell'>Goodrich pp. 472-478 (balanced search trees), 479-487 (AVL)<br>Skiena p. 82 (balanced search trees)</div>
+<div class='cell'><a href='practice/self_balancing_trees.html'>Practice problems</a> / <a href='practice/self_balancing_trees_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>3/26</div>
+<div class='cell'><a href='priority_queues_heaps.html'>Priority queue ADT, heaps</a></div>
+<div class='cell'>Sedgewick pp. 308-309 (priority queues), 313-318 (heaps)<br>Goodrich pp. 360-361 (priority queues), 370-383 (heaps)<br>Cormen pp. 151-159 (heaps), 162-164 (priority queues)<br>Skiena pp. 109-116 (priority queues, heaps)</div>
+<div class='cell'><a href='practice/priority_queues_heaps.html'>Practice problems</a> / <a href='practice/priority_queues_heaps_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>3/28</div>
+<div class='cell'><a href='sorting.html'>Sorting, selection</a><br><a href='master_theorem'>Master theorem</a></div>
+<div class='cell'>Sedgewick pp. 243-252, 270-277, 288-301, 323-327 (sorting), 345-347 (selection)<br>Goodrich pp. 388-389, 532-565 (sorting, selection)<br>Skiena pp. 104-132, 436-439 (sorting)<br>Cormen p. 30 (divide-and-conquer), 147-161, 170-204 (sorting), 215-219 (selection), 93-95 (master theorem)</div>
+<div class='cell'>***<a href='hw/hw3.html'>Homework 3</a>*** (due Apr 11)<br><br><a href='practice/sorting.html'>Practice problems</a> / <a href='practice/sorting_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>4/2</div>
+<div class='cell'><a href='sorting_linear_time.html'>Lower bound for sorting, sorting in linear time</a></div>
+<div class='cell'>Cormen pp. 191-204 (lower bound, sorting in linear time)<br>Sedgewick pp. 279-282 (lower bound), 703-709 (counting sort, radix sort)</div>
+<div class='cell'><a href='practice/sorting_linear_time.html'>Practice problems</a> / <a href='practice/sorting_linear_time_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>4/4</div>
+<div class='cell'><a href='hash_tables.html'>Hash tables</a></div>
+<div class='cell'>Sedgewick pp. 458-472 (hash tables)<br>Goodrich pp. 410-427 (hash tables)<br>Cormen pp. 253-264, 269-272 (hash tables)</div>
+<div class='cell'><a href='practice/hash_tables.html'>Practice problems</a> / <a href='practice/hash_tables_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>4/9</div>
+<div class='cell'><a href='string_matching.html'>String matching</a></div>
+<div class='cell'>Sedgewick pp. 758-761 (string matching), 774-778 (Rabin-Karp)<br>Skiena pp. 91-92 (string matching, Rabin-Karp)<br>Cormen pp. 985-994 (string matching, Rabin-Karp)</div>
+<div class='cell'><a href='practice/string_matching.html'>Practice problems</a> / <a href='practice/string_matching_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>4/11</div>
+<div class='cell'><a href='graphs.html'>Graphs</a></div>
+<div class='cell'>Sedgewick pp. 516-527 (graphs)<br>Goodrich pp. 612-629 (graphs)<br>Skiena pp. 145-155 (graphs)<br>Cormen pp. 589-592 (graphs)</div>
+<div class='cell'><a href='practice/graphs.html'>Practice problems</a> / <a href='practice/graphs_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>4/16</div>
+<div class='cell'><a href='graph_algorithms.html'>Graph algorithms</a></div>
+<div class='cell'>Sedgewick pp. 528-542 (graph traversal), 574-582 (cycle detection, topological sort)<br>Skiena pp. 161-181 (graph traversal, cycle detection, topological sort)<br>Goodrich pp. 630-642 (graph traversal)<br>Cormen pp. 594-606 (graph traversal), 612-614 (topological sort)</div>
+<div class='cell'>***<a href='hw/hw4.html'>Homework 4</a>*** (due May 12)<br><br><a href='practice/graph_algorithms.html'>Practice problems</a> / <a href='practice/graph_algorithms_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>4/18</div>
+<div class='cell'><a href='shortest_paths.html'>Shortest paths</a></div>
+<div class='cell'>Sedgewick pp. 638-655 (shortest paths, Dijkstra)<br>Skiena pp. 205-211 (shortest paths, Dijkstra, Floyd-Warshall)<br>Goodrich pp. 651-661 (shortest paths, Dijkstra), 643-646 (Floyd-Warshall)</div>
+<div class='cell'><a href='practice/shortest_paths.html'>Practice problems</a> / <a href='practice/shortest_paths_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>4/30</div>
+<div class='cell'><a href='search_techniques.html'>Search techniques</a></div>
+<div class='cell'>Skiena pp. 230-243 (backtracking)</div>
+<div class='cell'><a href='practice/search_techniques.html'>Practice problems</a> / <a href='practice/search_techniques_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>5/2</div>
+<div class='cell'><a href='dynamic_programming.html'>Dynamic programming</a></div>
+<div class='cell'>Cormen pp. 359-367 (dynamic programming)<br>Skiena pp. 273-274, 280-284 (dynamic programming)</div>
+<div class='cell'><a href='practice/dynamic_programming.html'>Practice problems</a> / <a href='practice/dynamic_programming_answers.html'>answers</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>5/7</div>
+<div class='cell'><a href='greedy.html'>Greedy algorithms</a></div>
+<div class='cell'>Cormen pp. 414-421 (greedy algorithms)</div>
+<div class='cell'>Greedy algorithms might not be covered.</div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>5/9</div>
+<div class='cell'>-</div>
+<div class='cell'>-</div>
+<div class='cell'>***<a href='hw/presentation.html'>Presentation (extra credit)</a>***<br><a href='hw/presentation_schedule.txt'>Presentation schedule</a></div>
+</div>
+
+<div class='row'>
+<div class='cell-left'>5/14</div>
+<div class='cell'>-</div>
+<div class='cell'>-</div>
+<div class='cell'><a href='practice/final.html'>Final advice</a> (the list of topics might be changed slightly)</div>
+</div>
+
+
+
+</div>
+
+<p><a href="image_sources.txt">All image sources</a></p>
+
+</div>
+</body>
+</html>

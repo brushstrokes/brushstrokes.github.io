@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Shortest paths questions</h1>
+<div class="figure"><img src="../weightedgraph.png" width="344"><br>Weighted undirected graph. Source: cs.usfca.edu/~galles</div>
+Suppose you run Dijkstra's algorithm on the weighted undirected graph pictured to the right, starting at vertex 2.
+<br>a) Show what the distance array looks like after you initialize it.
+<br><span class="red">{&infin;, &infin;, 0, &infin;, &infin;, &infin;, &infin;, &infin;}
+<br>(the starting vertex is initialized to 0, all others are initialized to &infin;)</span>
+<br>b) Show what the distance array looks like after updating vertex 2's neighbors' distances.
+<br><span class="red">{4, 9, 0, &infin;, 9, &infin;, 2, &infin;}
+<br>(the distances of vertices 0, 1, 4, and 6 are updated)</span>
+<br>c) Show what the distance array looks like after picking the next minimum-distance vertex and updating its neighbors' distances.
+<br><span class="red">{4, 8, 0, &infin;, 4, &infin;, 2, &infin;}
+<br>(vertex 6 is picked because it's the minimum-distance unknown vertex,
+<br>and the distances of vertices 1 and 4 are updated;
+<br>in both cases, the new distance is smaller than the old distance;
+<br>vertex 2 is not checked because it's already a "known" vertex)</span>
+
+<br><br>You are given a flight graph, where vertices are cities and edges are flights.  Edge weights are the prices of the flights.
+Some prices are negative because certain airlines will pay you to fly (but there are no negative cycles).
+Suppose you want to find the cheapest path between all pairs of cities.  Which algorithm would you use?
+<br><span class="red">The Floyd-Warshall algorithm.  Dijkstra's algorithm would not work because of the negative-weight edges.
+If there were no negative-weight edges, you could run Dijkstra's algorithm V times, once for each starting vertex.</span>
+
+<br><br>Suppose you implement Dijkstra's shortest path without a priority queue.
+This would allow you to perform each "find minimum-distance vertex" operation in O(V) time (by doing a linear search),
+and each "update distance" operation in O(1) time.
+What is the worst-case runtime of this implementation as a function of V (number of vertices) and E (number of edges)?
+<br><span class="red">We perform V "find minimum-distance vertex" operations, and at most E "change distance" operations,
+so this implementation's worst-case runtime is O(V<sup>2</sup> + E),
+which is O(V<sup>2</sup>) because E is at most V<sup>2</sup>.</span>
+
+<h2>Questions to talk about in class</h2>
+Suppose you want to solve the single-destination shortest path problem on a directed graph (finding the shortest path from each vertex to some vertex t).
+Explain how you can use Dijktra's algorithm to solve it (by modifying the algorithm and/or the graph).
+<br><span class="red">Flip the direction of each edge and run Dijkstra's algorithm starting at vertex t.
+
+</div>
+</body>
+</html>

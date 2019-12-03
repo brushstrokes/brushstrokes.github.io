@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Sorting in linear time questions</h1>
+Is it possible to sort 4 elements with 4 comparisons, in the worst-case?  Explain why or why not.
+<br><span class="red">It is impossible.
+The worst-case number of comparisons is the height of the decision tree, which must be at least ceil(log(n!)), which is 5.
+Note that this is just a lower bound.  If you want to prove that 5 comparisons is sufficient, you need to give an algorithm.</span>
+
+<br><br><b>What is the runtime of each algorithm?  Give your answer in &Theta; notation as a function of n (or n and k).</b>
+<br>Counting sort (n elements, each element in the range of 0 to k-1) (worst-case)
+<br><span class="red">O(n+k)</span>
+<br>Bucket sort (n uniformly-distributed elements, n buckets) (average-case)
+<br><span class="red">O(n)</span>
+
+<br><br>In radix sort, we run counting sort multiple times.
+Suppose we use radix sort (base 10) sort the elements {763, 521, 123, 745, 345}.
+Show the order of the numbers after each sort.
+<br><span class="red">After sorting by 1s: 521, 763, 123, 745, 345
+<br>After sorting by 10s: 521, 123, 745, 345, 763
+<br>After sorting by 100s: 123, 345, 521, 745, 763</span>
+
+<br><br>Counting sort is an example of a stable sort.  Explain what a stable sort is.
+<br><span class="red">A sorting algorithm is stable if numbers with the same value will appear in the output in the same order as they appeared in the input.</span>
+
+<br><br><b>Multiple choice</b>
+<br>You want to sort 100000 Students by height.  You cannot access their heights,
+but you can call a compareHeights method to compare two Students and see who's taller.  Which algorithm should you use?
+<br>A. Bucket sort
+<br>B. Quicksort
+<br>C. Radix sort
+<br>D. Selection sort
+<br><span class="red">Quicksort.  In bucket sort and radix sort, you need to be able to access the elements to compute the array indices.
+Selection sort is too slow.</span>
+
+<br><br>In what situation does counting sort perform well?
+<br>A. The array is nearly sorted
+<br>B. The numbers are in a random order
+<br>C. The numbers are uniformly distributed over a known range
+<br>D. The numbers are within a small range
+<br><span class="red">The numbers are within a small range.  The runtime is O(n+k), where the range is 0 to k-1, so you want k to be small.</span>
+
+<br><br>In what situation does bucket sort perform well?
+<br>A. The array is nearly sorted
+<br>B. The numbers are in a random order
+<br>C. The numbers are uniformly distributed over a known range
+<br>D. The numbers are within a small range
+<br><span class="red">The numbers are uniformly distributed over a known range.
+After distributing the elements into buckets, you need to sort the buckets, so you want each bucket to be small.</span>
+
+<h2>Questions to talk about in class</h2>
+You are given a deck of 52 playing cards and you want to sort them as fast as possible.
+You know that each number occurs 4 times.  How would you do it?
+<br><span class="red">If you're sorting by hand, it's hard to say.  It depends how fast you can do each type of operation.
+<br>If you're sorting with a program, counting sort is most likely the best choice because the numbers are within a small range.</span>
+
+<br><br>You want to use radix sort to sort 1000 unsigned integers.  Each integer is in the range of 0 to 2<sup>32</sup>-1.
+What base should you use to minimize the runtime?
+<br><span class="red">Typically we use power-of-2 bases so we can use bitwise operations to get the digits.
+Base 256 (4 digits per number) is probably the best choice.  Nearby powers of 2 would be reasonable, but base 2 would be significantly slower.</span>
+
+</div>
+</body>
+</html>

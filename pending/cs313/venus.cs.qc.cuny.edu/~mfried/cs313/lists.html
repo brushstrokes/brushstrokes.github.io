@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Lists</h1>
+A <b>list</b> is an ordered sequence of values that allows us to read or modify values at specific positions, and add or remove elements.
+<br>It can be <a href="list_implementations.html">implemented</a> with either an array or a linked list.
+
+<br><br><b>Sample code</b>
+<br><a href="code/UsingLists.java">UsingLists</a> - Shows how to use ArrayLists and LinkedLists, two classes in the <b>Java Collections Framework</b> (JCF).
+The JCF contains implementations of many common data structures, as well as some common algorithms.
+<br>(see also <a href="code/UsingLists.cpp">C++ version</a>)
+
+<div class="figure"><img src="array.gif"><br>Array. Source: oracle.com</div>
+<h2>Arrays</h2>
+An <b>array</b> is a fixed-size collection of elements of the same type stored continuously in memory.
+<br>You can access an element by its index in constant time.
+<br>An array cannot grow.
+<br><a href="https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">ArrayList</a>
+is an array implementation of the <a href="https://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a> interface.
+
+<h2>Linked lists</h2>
+<div class="figure"><img src="linkedlist.png" width="500"><br>Linked list. Source: geeksforgeeks.org</div>
+A <b>linked list</b> is a collection of nodes.  Each node contains an element of the list.
+<br>In a singly-linked list, each node has a pointer to the next node.
+<br>In a doubly-linked list, each node has a pointer to the next node and the previous node.
+<br><br>The nodes are not stored continuously in memory, and a linked list can grow.
+<br>We can traverse the list by starting at the first node (the head)
+and following the pointers from each node to the next node.
+<br><a href="https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html">LinkedList</a> (JCF)
+is a doubly-linked list implementation of the <a href="https://docs.oracle.com/javase/7/docs/api/java/util/List.html">List</a> interface.
+
+</div>
+</body>
+</html>

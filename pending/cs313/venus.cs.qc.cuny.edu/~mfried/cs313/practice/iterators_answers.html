@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Iterators</h1>
+<h2>Questions to talk about in class</h2>
+Suppose you have a linked list of integers.  How would you remove all negative integers?  What's the runtime?
+<br><span class="red">Use an iterator.  Use the iterator's remove method.
+Do not use the linked list's get method because then it would take &Theta;(n) to access each element.</span>
+
+<br><br>Many data structures inherit a toString method from the AbstractCollection class.
+<br>How would you write one toString method in AbstractCollection that works for all of the data structures?
+<br><span class="red">Use an iterator.  All collections implement the Iterable interface, so they all have an iterator method.
+<br>Append each element to a String (or StringBuilder for better efficiency).
+<br><span class="red">See the source code of  <a href="http://hg.openjdk.java.net/jdk8u/jdk8u-dev/jdk/file/c5d02f908fb2/src/share/classes/java/util/AbstractCollection.java">AbstractCollection</a> for the full answer.</span>
+
+</div>
+</body>
+</html>

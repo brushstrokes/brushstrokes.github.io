@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Homework 4: breadth-first search</h1>
+You have been given the following code:
+<br><a href="HW4.java">HW4.java</a>
+
+<br><br>In HW4, you will use breadth-first search to test if a given "8-puzzle" configuration is solvable.
+You should submit one file, HW4.java.
+
+<h2>8-puzzle rules</h2>
+The puzzle consists of a 3x3 grid, with 8 tiles, labeled 1 to 8, and one empty slot.
+You can move a tile horizontally or vertically into the empty slot,
+to move from one configuration to another.
+The initial configuration is "solvable" if it is possible to reach the goal configuration.</p>
+<div class="figure" style="float:left"><img src="8puzzle.png" width="750">
+<br>This initial configuration is solvable because it is possible to reach the goal configuration.  Source: cs.princeton.edu</div>
+
+<p><h2 style="clear:both">Graph representation</h2>
+Each configuration will be represented by a Configuration object (the Configuration class has been given to you).
+
+<br><br>The Configuration class has the following instance methods:
+
+<br><br><b>List&lt;Configuration&gt; getAdjacentConfigurations()</b>
+<br>returns a List of all adjacent configurations adjacent to this configuration (the List will always have 2, 3, or 4 elements).
+<br>For example, if c is a Configuration object, c.getAdjacentConfigurations() returns a List of Configurations adjacent to c.
+
+<br><br><b>boolean isGoalConfiguration()</b>
+<br>returns true if if this configuration is the goal configuration.
+<br>For example, if c is a Configuration object, c.isGoalConfiguration() returns true if c is the goal configuration.
+
+<h2>Solving the puzzle</h2>
+Write a method
+<br><b>boolean isSolvable(Configuration initialConfiguration)</b>
+<br>which takes an initial configuration as a parameter and returns true if it is possible to reach the goal configuration.  Otherwise return false.
+<br>You must use <b>breadth-first search</b>.
+If the search takes more than 1 second, there's probably a bug in your code.
+
+<br>Below is pseudocode for breadth-first search.</p>
+<div class="code">boolean isSolvable(Configuration initialConfiguration) {
+   initialize empty queue
+   mark initialConfiguration as visited
+   add initialConfiguration to queue
+   while queue is not empty {
+      v = queue.dequeue()
+      get the list of configurations that are adjacent to v
+      for each adjacent configuration w {
+         if w has not been visited yet {
+            mark w as visited
+            add w to queue
+         }
+      }
+   }
+   // Additionally, put return statements in the appropriate places
+   // (return true if you visited the goal configuration, otherwise return false).
+}
+</div>
+<ul><li>I suggest using a HashSet to keep track of which configurations have been visited
+(Configuration objects may be used as hash table keys because the class has both an equals method and a hashCode method).</li>
+<li>You can find a list of Queue methods in the <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html">Queue interface</a>.</li>
+<li>The Configuration class has a ToString method, in case you want to print the 3x3 grids, which might be useful for debugging purposes.</li></ul>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<div class="figure"><img src="binarytree.jpeg" width="350"><br>Binary tree. Source: cs.cmu.edu/~adamchik
+<br><br><img src="binarytreenode.png" width="350"><br>Binary tree node.<br>Source: algorithms.tutorialhorizon.com</div>
+<p><h1>Trees</h1>
+A <b>tree</b> is an abstract data type that stores elements hierarchically.
+<br>A tree is a collection of nodes which have a <b>parent-child</b> relationship.  A tree may be empty.
+<ul><li>The first node is called the <b>root</b> (there cannot be multiple roots).</li>
+<li>Each node (except the root) has exactly one parent.</li>
+<li>Each node has zero or more children.</li></ul>
+
+<h2>Terminology</h2>
+<ul><li>A <b>binary tree</b> is a tree where every node has at most two children, a left child and a right child.</li>
+<li>A <b>leaf</b> is a node with no children.</li>
+<li>An <b>internal node</b> has one or more children.</li>
+<li>The <b>ancestors</b> of a node are the nodes reachable by repeatedly going from child to parent (including the node itself).</li>
+<li>The <b>descendants</b> of a node are the nodes reachable by repeatedly going from parent to child (including the node itself).</li>
+<li>A <b>subtree</b> is a tree that consists of a node and its descendants.
+In a binary tree, a node's left subtree and right subtree are the trees rooted at its left child and its right child.</li>
+<li>The <b>depth</b> of a node is the number of edges from the root to the node (the depth of the root is 0).</li>
+<li>The <b>height</b> of a tree is the number of edges in the longest path from root to leaf.</li></ul>
+
+<div class="figure"><img src="expressiontree.png" width="300"><br>Expression tree. Source: codinghelmet.com<br>(2 * (3 + (6 / 2))) / 4</div>
+Trees are often used to store sorted data, as in a <a href="binary_search_trees.html">binary search tree</a>.
+
+<br><br>A tree can also be used store hierarchical data, as in a parse tree or expression tree.
+<div class="figure" style="float:left"><img src="parsetree.png" width="334"><br>Parse tree. Source: cs.cornell.edu/courses/cs2112</div>
+
+</div>
+</body>
+</html>

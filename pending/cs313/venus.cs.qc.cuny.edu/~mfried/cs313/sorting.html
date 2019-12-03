@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Sorting</h1>
+<b>Sorting</b> is the process of rearranging a sequence of elements, usually an array, to put them in order (either increasing or decreasing).
+<br>We may sort elements by value, or we may sort by a key (for example, we might want to sort student objects by name).
+
+<br><br>A <b>comparison sort</b> is a sorting algorithm that determines the order only by comparing two elements at a time.
+<br>First we will look at several O(n<sup>2</sup>) and O(nlogn) comparison sorts.
+<br>Then we will see how to sort faster (in some situations) with non-comparison-based algorithms.
+
+<br><br><b>Sample code</b>
+<br><a href="code/Sorting.java">Sorting</a> - Selection sort, insertion sort, mergesort, quicksort (with Lomuto partitioning), quickselect
+<br><a href="code/QuicksortHoare.java">Quicksort</a> with Hoare partitioning
+
+<h2>O(n<sup>2</sup>) algorithms</h2>
+<h2>Selection sort</h2>
+Find the smallest element and put it in the correct spot, then find the 2nd smallest element and put it in the correct spot, etc.
+<br>There are n iterations, and on average ~n/2 comparisons per iteration, so it is O(n<sup>2</sup>).
+
+<h2 style="clear:both">Insertion sort</h2>
+<div class="figure"><img src="insertionsort.png" width="550"><br>Insertion sort. Source: geeksforgeeks.org</div>
+We insert each element one at a time into the correct spot in the sorted portion of the array.
+
+<br><br><b>Runtime</b>
+<br>There are n iterations.  In each iteration, we shift elements to make room for the current element,
+but if the current element is close to the correct spot, there is less shifting.
+<br><br>Insertion sort is O(n<sup>2</sup>) average-case, but performs well when the array is small or nearly sorted.
+Therefore insertion sort is often used in other algorithms (e.g. mergesort and quicksort) to sort small subarrays.
+
+<h2 style="clear:both">O(nlogn) algorithms</h2>
+<div class="figure"><img src="heapsort.png" width="550"><br>Heapsort. Source: kullabs.com</div>
+<h2>Heapsort</h2>
+<b>Heapsort</b> sorts an array in two phases:
+<ul><li>Build a max heap.</li>
+<li>Build the sorted array by repeatedly removing the maximum element, moving them to the space that opens up at the end of the array.</li></ul>
+
+<b>Runtime</b>
+<br>Building a heap bottom-up is O(n).
+Removing the elements is O(nlogn), because there are n removals and each removal is O(logn).
+The total runtime is O(nlogn) worst-case.
+<br><br>Heapsort is an <b>in-place</b> algorithm, which means that it uses O(1) extra space.
+
+<h2 style="clear:both">Mergesort</h2>
+<div class="figure"><img src="mergesort.gif" width="476"><br>Mergesort. Source: mcs.anl.gov/~itf/dbpp</div>
+<b>Mergesort</b> is an example of a <b>divide-and-conquer</b> algorithm.  Divide-and-conquer has three steps:
+<ul><li><b>Divide</b> the problem into smaller subproblems.</li>
+<li><b>Conquer</b> the subproblems by solving them recursively, until they are small enough to solve directly.</li>
+<li><b>Combine</b> the solutions to the subproblems into the solution to the original problems.</li></ul>
+In mergesort the three steps are:
+<ul><li><b>Divide</b> the array into two halves.</li>
+<li><b>Conquer:</b> Recursively sort the two halves.</li>
+<li><b>Combine:</b> Merge the two halves into one sorted sequence.</li></ul>
+
+<b>Runtime</b>
+<div class="figure"><img src="mergesortruntime.png" width="484"><br>Source: Goodrich p. 539</div>
+<br>On each level of recursion, the array is divided in half, so there are O(logn) levels.
+The total time spent merging on each level of the tree is O(n).
+The total runtime is O(nlogn) worst-case.
+
+<br><br>Mergesort typically uses O(n) extra space because it copies the elements into another array while merging (although it can be done in-place).
+
+<h2 style="clear:both">Quicksort</h2>
+<div class="figure"><img src="quicksort.png" width="450"><br>Quicksort. Source: techiedelight.com
+<br><br><img src="goodpartition.png" width="365"><br>About half of the pivots will be good (close to the median).<br>Source: Skiena p. 126
+<br><br><img src="quicksortpartitioning.png" width="450"><br>Lomuto's partitioning scheme for quicksort. Source: hackerearth.com</div>
+<b>Quicksort</b> is a divide-and-conquer algorithm:
+<ul><li><b>Divide:</b> Partition the array into two halves.</li>
+<li><b>Conquer:</b> Recursively sort each half.</li></ul>
+(the array is now sorted, so no work is needed to combine the halves)
+
+<br><br><b>Partitioning</b>
+<br>Partition the array by choosing a pivot element, and rearrange the elements such that
+all elements to the left of the pivot are less than or equal to the pivot,
+and all elements to the right of the pivot are greater than or equal to the pivot.
+Two well-known partitioning schemes are Hoare partitioning and Lomuto partitioning.
+
+<br><br><b>Runtime</b>
+<br>The best case is O(nlogn), when the array is always divided exactly in half,
+because there are O(logn) levels of recursion, and the total time spent partitioning on each level is O(n).
+The worst case is O(n<sup>2</sup>), when every number ends up on the same side of the pivot.
+
+<br><br><b>Average case runtime</b>
+<br>The runtime depends on the height of the recursion tree.
+Suppose we always have a "good partition" - a partition with no more than 3/4 of the elements in the larger half.
+The worst possible good partition reduces the array size by a factor of 4/3.
+It will take at most log<sub>4/3</sub>n good partitions to reach an array size of 1.
+We expect about half of the partitions to be good, so the expected height is at most 2log<sub>4/3</sub>n = O(logn).
+
+<br><br>Quicksort is popular because good implementations typically run faster than other O(nlogn) sorting algorithms.
+
+<br><br><b>Worst-case O(nlogn) runtime</b>
+<br>The worst-case runtime can be improved to O(nlogn) by using the median-of-medians algorithm
+to find an approximate median to use as the pivot.  This method is slow, so it is not used in practice.
+
+<br><br>Introsort is a <b>hybrid algorithm</b> (an algorithm that combines multiple algorithms.
+It begins with quicksort and switches to heapsort if the recursion depth grows too large.
+This allows us to achieve quicksort's fast average-case runtime while avoiding quicksort's worst-case runtime.
+
+<br><br><b>Quicksort randomization</b>
+<br>If we always pick an element from the same position as the pivot, then certain inputs will always have the worst-case runtime.
+For example, if the pivot is always the leftmost element, an already-sorted array will be the worst case.
+Many implementations avoid this by picking a random pivot, or by randomly shuffling the array before starting.
+This guarantees that all inputs have an expected runtime of O(nlogn).
+
+<br><br>Another common strategy is to choose three elements and then compute the median-of-three to use as a pivot.
+This improves the probability of picking a good pivot.
+
+<br><br>Quicksort uses O(logn) extra space (for the recursion stack).
+
+<h2>Quickselect</h2>
+Suppose we want to find the kth smallest element of an unsorted array.
+Since we are only interested in one element, it is not necessary to sort the entire array.
+<b>Quickselect</b> begins by partitioning the array into two halves, just like quicksort.
+Instead of recursively sorting both halves, we call quickselect recursively on only one of the two halves,
+because we know which half will contain the kth smallest element.
+
+<br><br>The best-case runtime is O(n) because the total work is n + n/2 + n/4 + ... (the sum of a geometric series).
+<br>The expected runtime is also O(n). (proof: Cormen pp. 217-219)
+<br>The worst-case runtime is O(n<sup>2</sup>).
+
+<h2>Floyd-Rivest algorithm</h2>
+This algorithm finds the kth smallest element of an unsorted array.  On average, it uses fewer comparisons than quickselect.
+We begin by picking a small random sample.  Using the random sample, we find two pivots u and v,
+such that the kth smallest element is between u and v with high probability.
+Then we partition the array into three parts: elements less than u, elements between u and v, and elements greater than v.
+Then we apply the algorithm recursively to the appropriate portion.
+
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Runtime questions</h1>
+<b>Give a &Theta; (big theta) estimate for each function.</b>
+<br>a. f(n) = 2<sup>30</sup>
+<br><span class="red">&Theta;(1).  Even though it's a large number, it's still a constant.</span>
+<br>b. f(n) = n<sup>3</sup> + 3n<sup>2</sup>
+<br><span class="red">&Theta;(n<sup>3</sup>).  Largest exponent rule.
+The term with the larger exponent increases at a faster rate and is the most significant term.</span>
+<br>c. f(n) = n + logn
+<br><span class="red">&Theta;(n).  For any constant k > 0,
+n<sup>k</sup> increases at a faster rate than logn, so n is the most significant term.</span>
+<br>d. f(n) = (n<sup>2</sup> + n)(n - 1)
+<br><span class="red">&Theta;(n<sup>3</sup>).  Product rule.
+(n<sup>2</sup> + n) = &Theta;(n<sup>2</sup>) and (n - 1) = &Theta;(n), so the product is &Theta;(n<sup>2</sup> * n) = &Theta;(n<sup>3</sup>).</span>
+
+<br><br><b>True or false</b>
+<br><br>a. sqrt(n) = O(logn).
+<br><span class="red">False.  sqrt(n) = n<sup>0.5</sup>.  For any constant k,
+n<sup>k</sup> increases at a faster rate than logn.</span>
+<br>b. If f(n) = O(g(n)), then g(n) = O(f(n)).
+<br><span class="red">False.  For example, suppose f(n) = n and g(n) = n<sup>2</sup>.</span>
+<br>c. If f(n) = &Theta;(g(n)), then f(n) = O(g(n)).
+<br><span class="red">True.  By definition of big theta, c<sub>1</sub>g(n) &le; f(n) &le; c<sub>2</sub>g(n).  Therefore f(n) &le; c<sub>2</sub>g(n).</span>
+<br>d. If an algorithm's worst-case runtime is O(n<sup>2</sup>), it is possible that it takes O(n) time on every input.
+<br><span class="red">True.  Big O is just an upper bound.  We know the runtime &le; cn<sup>2</sup>, but it may also be &le; cn.</span>
+<br>e. If the runtimes of two algorithms are &Theta;(n<sup>2</sup>) and &Theta;(n) (best, worst, and average case),
+the &Theta;(n) algorithm definitely runs faster (i.e. takes less time to run) on every input.
+<br><span class="red">False.  We don't know the constants.
+For example, suppose the &Theta;(n<sup>2</sup>) algorithm has a runtime of n<sup>2</sup>, and the &Theta;(n) algorithm has a runtime of 100n.
+For small values of n, 100n > n<sup>2</sup>.</span>
+<br>f. 2<sup>n+1</sup> = O(2<sup>n</sup>).
+<br><span class="red">True.  2<sup>n+1</sup> = 2 * 2<sup>n</sup> = O(2<sup>n</sup>).</span>
+
+<br><br><b>What is the runtime of each method?  Give your answer in &Theta; notation as a function of n.</b>
+<pre>int foo1(int n) {
+   int x = 0;
+   for (int i = 0; i < n; ++i)
+      for (int j = 0; j < i; ++j)
+         ++x;
+   return x;
+}
+<span class="red">&Theta;(n<sup>2</sup>).  Each basic operation takes O(1) time.
+The inner loop repeats, on average, about n/2 times.  The outer loop repeats n times.
+The total number of operations in the loop is about n<sup>2</sup>/2.</span>
+
+int foo2(int n) {
+   int x = 0;
+   while (n > 0) {
+      n = n / 2;
+      ++x;
+   }
+   return x;
+}
+<span class="red">&Theta;(logn).  n is repeatedly divided by 2, so the number of iterations is about logn.</span></pre>
+
+<h2>Questions to talk about in class</h2>
+What if you have a really fast computer?
+Is an &Theta;(n<sup>2</sup>) algorithm on a fast computer faster than an &Theta;(nlogn) algorithm on a slow computer?
+<br><span class="red">Changing the computer speed is like changing a constant.
+No matter what the constants are, the &Theta;(nlogn) algorithm is faster when n is large enough.
+</span>
+
+</div>
+</body>
+</html>

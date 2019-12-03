@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Graph algorithms</h1>
+<h2>Traversal</h2>
+<b>Graph traversal</b> is a systematic way to visit each vertex in a graph.
+Traversal allows us to answer questions like "Is there a path from x to y?" or "Does the graph contain a cycle?"
+Traversal may begin at any vertex, unlike tree traversal which typically begins at the root.
+There are two common ways to traverse a graph:
+<ul><li>In <b>depth-first search</b>, we explore each path as deeply as possible before exploring the next path.  It can be implemented with recursion.
+<li>In <b>breadth-first search</b>, we explore vertices closer to the source before vertices farther from the source.
+<br>In other words, first visit all vertices you can reach by following 1 edge, then all vertices you can reach by following 2 edges, etc.
+It can be implemented with a queue.
+Breadth-first search finds the paths with the minimal number of edges.</li></ul>
+Unliked trees, a graph may contain a cycle, so we mark each vertex that we visit to avoid visiting the same vertex twice.
+Every reachable vertex will be marked (some vertices may be unreachable).</p>
+
+<div class="figure"><img src="dfs.png" width="378"><br>Source: Sedgewick pp. 533, 539</div>
+<h2>Depth-first search</h2>
+<div class="code">// Depth-first search beginning at vertex v
+void dfs(int v) {
+   marked[v] = true
+   for each vertex w adjacent to v:
+      if !marked[w]:
+         edgeTo[w] = v
+         dfs(w)
+}
+</div>
+<p>Note that the order in which we visit v's neighbors depends on their order in v's adjacency list.
+<br><br>edgeTo[w] is the vertex we came from to get to w;
+<br>we can use this array to print the path).
+
+<br><br><b>Cycle detection</b>
+<br>A cycle is a path of at least 1 edge that starts and ends at the same vertex.
+<br>In both directed and undirected graphs, we can use DFS to detect cycles.
+<br>Call dfs on an arbitrary vertex.  If there are still unmarked vertices,
+repeat the process by calling dfs on an arbitrary unmarked vertex until all vertices are marked.
+
+<br><br><b>Cycles in undirected graphs:</b> If we are ever adjacent to a vertex w that we visited earlier
+(other than the vertex we just came from), the graph has a cycle
+(starting at w, following the path that we took, and following the edge back to w).
+
+<br><br><b>Cycles in directed graphs:</b> If we are ever adjacent to a vertex w that is currently on the recursion stack
+(i.e. a vertex on the path that took us to the current vertex), the graph has a cycle.
+We can use a boolean array to keep track of which vertices are currently on the recursion stack.
+
+<br><br><b>Topological sorting</b>
+<br>In a directed acyclic graph, a <b>topological sort</b> is an ordering of vertices such that if there is an edge from x to y, then x is before y in the ordering.
+For example, in a prerequisite graph, a topological sort is a valid order to take courses.
+If the directed graph has a cycle, there is no topological sort.
+
+<br><br>DFS can be used for topological sorting.  Initialize an empty list, then call dfs on an arbitrary vertex v.
+After calling dfs on all vertices adjacent to v, add v to the front of the list.
+If there are still unmarked vertices, repeat the process by calling dfs on an arbitrary unmarked vertex until all vertices are marked.
+The list will be topologically sorted.
+<div class="figure" style="float:left"><img src="topologicalsort.png" width="450">
+<br>Directed acyclic graph, topologically sorted from left to right.<br>Source: techiedelight.com</div>
+
+<h2 style="clear:both">Breadth-first search</h2></p>
+<div class="figure" style="clear:both"><img src="bfs.png" width="375"><br>Source: Sedgewick pp. 533, 539</div>
+<div class="code">// Breadth-first search beginning at vertex v
+void bfs(int v) {
+   initialize queue
+   marked[v] = true
+   queue.enqueue(v)
+   while queue is not empty:
+      v = queue.dequeue()
+      for each vertex w adjacent to v:
+         if !visited[w]:
+            edgeTo[w] = v
+            marked[w] = true
+            queue.enqueue(w)
+}
+</div>
+
+<p><b>Runtime</b>
+<br>For a graph with V vertices and E edges, both DFS and BFS take O(V+E) time.
+Each vertex is visited once, and in total there are 2E adjacent vertices to check (2E is the sum of the degrees of all vertices).</p>
+
+</div>
+</body>
+</html>

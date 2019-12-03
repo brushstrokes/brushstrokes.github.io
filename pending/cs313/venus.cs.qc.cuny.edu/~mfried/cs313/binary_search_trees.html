@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Binary search trees</h1>
+<div class="figure"><img src="bst.jpeg" width="300"><br>Binary search tree. Source: cs.cmu.edu/~adamchik</div>
+A <b>binary search tree</b> is a tree where every node's key is greater than all keys in its left subtree
+and less than all keys in its right subtree.</li></ul>
+<br><br>This property allows us to efficiently search for a key.
+<br>Each subtree is itself a binary search tree.
+
+<h2 style="clear:both;">Searching</h2>
+<div class="figure"><img src="bstsearch.png" width="400"><br>BST searching. Source: algorithms.tutorialhorizon.com</div>
+We begin by comparing the target to the root value.
+<ul><li>If target == root's key, we found the target.</li>
+<li>If target < root's key, search the left subtree.</li>
+<li>If target > root's key, search the right subtree.</li></ul>
+We repeat this process until we find the target (successful search) or reach a null subtree (unsuccessful search).
+
+<h2>Insertion</h2>
+Insertion is similar to searching.  First we search for the key that we want to insert.
+<ul><li>If we find it, do not insert the key (there are no duplicates).</li>
+<li>If we reach a null reference, replace it with a new node.</ul>
+
+<h2 style="clear:both;">Deletion</h2>
+<div class="figure"><img src="bstdeletioncase1.png" width="450"><br>BST deletion (no children). Source: algorithms.tutorialhorizon.com
+<br><br><img src="bstdeletioncase2.png" width="450"><br>BST deletion (1 child). Source: algorithms.tutorialhorizon.com
+<br><br><img src="bstdeletioncase3.png" width="450"><br>BST deletion (2 children). Source: algorithms.tutorialhorizon.com</div>
+First we find the node that we want to delete (let's call it "nodeToDelete").  There are three cases.  If nodeToDelete has...
+<ul><li><b>No children:</b> Update parent's left or right pointer to null
+(depending on whether nodeToDelete is a left child or a right child).</li>
+<li><b>1 child:</b> Update parent's pointer to point to nodeToDelete's child.</li>
+<li><b>2 children:</b> Replace nodeToDelete with its <b>successor</b>
+<br>(the successor is the smallest node in the right subtree).
+<br>Then delete the successor from the right subtree (deleting the successor will be one of the first 2 cases).</li></ul>
+
+<h2>Runtime</h2>
+The runtime of search, insert, and delete is proportional to the height of the tree,
+because the path to any node cannot be more than the height.
+We can use a <a href="self_balancing_trees.html">self-balancing tree</a> to ensure that the height does not grow too large.
+
+<h2>Implementation</h2>
+<b>Sample code</b>
+<br><b>Classes:</b> <a href="classes/BSTreeSet.java">BSTreeSet</a> / <a href="classes/BSTreeMap.java">BSTreeMap</a>
+<br>(<a href="classes/BSTreeSetNonrecursive.java">BSTreeSet</a> with non-recursive add and contains)
+<br><b>Interfaces:</b> <a href="classes/Set.java">Set</a> / <a href="classes/Map.java">Map</a>
+<br>These are simplified implementations of <a href="https://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html">TreeSet</a>
+and <a href="https://docs.oracle.com/javase/7/docs/api/java/util/TreeMap.html">TreeMap</a> from the JCF.
+Rebalancing is not implemented.
+
+<ul><li>The key type must implement <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html">Comparable</a>.</li>
+<li>In some BST implementations, each node has a pointer to its parent, which can be useful for iterating or rebalancing.</li></ul>
+
+</div>
+</body>
+</html>

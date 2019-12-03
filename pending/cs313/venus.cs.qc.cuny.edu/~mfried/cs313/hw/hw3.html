@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Homework 3: sorting</h1>
+You have been given the following code:
+<br><a href="HW3.java">HW3.java</a>
+
+<br><br>The quicksort method in HW3.java is not very optimized.
+In this assignment, you will make an improvements to the code, and measure runtimes before and after making the improvement.
+You should submit two files:
+<ul><li>HW3.java (code)</li>
+<li>hw3.txt (runtimes)</li></ul>
+<a href="hw3.txt">Sample hw3.txt file</a> (replace the blank lines with your answers)
+<br>This homework is worth only 45 points instead of 100 (30 points for the code, 15 points for hw3.txt).
+
+<h2>Measuring runtime</h2>
+Quicksort runs faster on some inputs, and slower on other inputs.
+Therefore it is important to run many tests to ensure that the result was not lucky.
+You have been given a <b>runTest</b> which generates many random arrays, sorts each array, and prints the average runtime.
+
+<ul><li>Before you modify the code, run the program to measure the average runtime to sort 100 random arrays, each with 100000 elements.
+Record the runtimes in HW3.txt.</li></ul>
+
+<h2>Insertion sort for small subarrays</h2>
+Although insertion sort is O(n<sup>2</sup>) and quicksort is O(nlogn), insertion sort is faster for small arrays.
+
+<ul><li>Modify quicksort so that each time you call quicksort recursively,
+check the size of the subarray (the "subarray" is the portion of the array currently being sorted, from index low to index high).
+If the size is smaller than the threshold, sort it with insertion sort instead of quicksort (you have been given an insertionsort method).
+Run the program 4 times with 4 different thresholds: 8, 32, 64, 1024.</li>
+
+<li>For each threshold, record the average runtime.
+<br>Which threshold gives the best runtime?</li></ul>
+
+</div>
+</body>
+</html>

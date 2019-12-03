@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>String matching questions</h1>
+KMP and Rabin-Karp are two algorithms for the same problem.  Explain the goal of the problem.
+
+<br><br>The Rabin-Karp algorithm has a good average-case runtime, but a bad worst-case runtime.
+In what situation would the algorithm have the worst-case runtime?
+
+<br><br>Suppose you are running the Rabin-Karp algorithm, and you want to calculate the hash of each 4-character substring of "String".
+<br>hash("Stri") = 83a<sup>3</sup> + 116a<sup>2</sup> + 114a + 105
+<br>If you already know hash("Stri"), what calculations would you do to find the value of hash("trin") in constant time? (note: n's ascii code is 110)
+
+<br><br>Below is a bad implementation of the Rabin-Karp algorithm.
+It gives the correct answers, but it's slow.  Explain what the problem is.
+<pre>public static int RabinKarp(String pattern, String text) {
+   int m = pattern.length(), n = text.length();
+   int patternHash = pattern.hashCode(); // Compute the hash code of the pattern
+   for (int i = 0; i <= n-m; ++i) {
+      String substring = text.substring(i, i+m);
+      int textHash = substring.hashCode(); // Compute the hash code of the ith substring
+      // If the hashes match, verify that the strings match
+      if (patternHash == textHash && pattern.equals(substring))
+         return i;
+   }
+   return -1;
+}
+</pre>
+
+</div>
+</body>
+</html>

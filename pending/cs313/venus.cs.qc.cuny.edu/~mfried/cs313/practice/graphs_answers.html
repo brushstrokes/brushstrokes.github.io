@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Graphs questions</h1>
+How much space does an array of adjacency lists use?
+Give your answer in &Theta; notation as a function of V (the number of vertices) and E (the number of edges).
+<br><span class="red">&Theta;(V+E)</span>
+
+<br><br><b>Multiple choice</b>
+<br>If a graph has 10000 nodes and 50000 edges, and you want to use as little space as possible, how should you represent it?
+<br>A. Adjacency matrix
+<br>B. Array of adjacency lists
+<br><span class="red">Array of adjacency lists.  The space is &Theta;(V+E).
+The exact space depends on the implementation, but if each edge uses 64 bits, the entire graph can be stored in about 4 million bits.
+This is much less than the 100 million bits used by an adjacency matrix.</span>
+
+<br><br>If a graph has 10000 nodes and 50000 edges,
+and you want to be able to check as quickly as possible if a particular edge exists in the graph, how should you represent it?
+<br>A. Adjacency matrix
+<br>B. Array of adjacency lists
+<br><span class="red">Adjacency matrix.  This allows us to check for the existence of an edge in O(1) time.</span>
+
+</div>
+</body>
+</html>

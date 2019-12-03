@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Dynamic programming</h1>
+<b>Dynamic programming</b> is a method of solving problems by breaking them down into smaller, overlapping subproblems.
+Each time we solve a subproblem, we store the answer in a table, so we only have to solve each subproblem once.
+
+<br><br>Dynamic programming is often used to solve optimization problems, where we want to find a solution with the minimum or maximum value.
+After we find optimal solutions to the subproblems, we use those solutions to construct an optimal solution to the original problem.
+
+<div class="figure"><img src="rodcuttingarray.png" width="373"><br>Array of prices. Source: Cormen p. 360
+<br><br><img src="rodcutting.png" width="554"><br>8 possible ways to cut up a rod of length 4. Source: Cormen p. 361</div>
+<h2>Rod cutting problem</h2>
+We are given a rod of integer length n, and an array of prices for each integer length.
+We want to cut up the rod and sell the pieces to maximize the total price.
+
+<br><br>At each of n-1 spots, we can either cut or not cut,
+so there are 2<sup>n-1</sup> possible solutions.  If n is large, it would take too long to check all of them.
+
+<h3 style="clear:both">Recursion strategy</h3>
+<div class="figure"><img src="rodcuttingrecursion.png" width="426"><br>For each possible leftmost cut,<br>solution = (left piece) + (optimal cutting of right piece).<br>Source: cdn.cs50.net</div>
+<ul><li>Consider each possible place to make the leftmost cut.</li>
+<li>Each possible solution can be defined recursively:
+<br>(value of left piece) + (optimal solution for cutting up the right piece)</li>
+<li>Check which solution is best.</li></ul>
+
+We say the rod-cutting problem exhibits <b>optimal substructure</b> because an optimal solution contains within it optimal solutions to subproblems.
+<div class="figure" style="float:left"><img src="rodcuttingtree.png" width="341">
+<br>Recursion tree with overlapping subproblems.<br>The number is the length of the rod.<br>Source: Cormen p. 364</div>
+
+<h3 style="clear:both">Using dynamic programming</h3>
+There are two ways to implement dynamic programming.
+<ul><li>In the <b>top-down</b> approach, we solve the problem recursively.
+The function first checks if the subproblem has already been solved.
+If so, it returns the answer.  If not, it computes and stores the answer, then returns it.</li>
+<li>In the <b>bottom-up</b> approach, we solve each subproblem non-recursively and store the answer, starting with the smallest subproblem.</li></ul>
+In both approaches we can use an array to store the answers, where the optimal solution for a rod of length i is stored at index i.
+
+<br><br><b>Runtime</b>
+<br>If n is the rod length, there are n subproblems.  For each subproblem we consider n possible leftmost cuts,
+so the runtime is O(n<sup>2</sup>).
+
+<br><br>Many problems that seem to be exponential can be solved in polynomial time with dynamic programming, as long as the number of subproblems is polynomial.
+
+<br><br><b>Sample code</b>
+<br><a href="code/RodCutting.java">RodCutting</a> (top-down, bottom-up)
+
+<div class="figure"><img src="editdistance.gif" width="438"><br>Edit distance. Source: ideserve.co.in</div>
+<h2>Edit distance</h2>
+We are given two words, and we want to find the shortest sequence of edits to transform one word into the other.
+An "edit" can be an insertion, deletion, or substitution.  For example, the distance from "intention" to "execution" is 5 (see the image).
+
+<br><br>Edit distance is an important component of automatic spelling correction.
+
+<h3>Recursion strategy</h3>
+There are 4 choices of what to do with the last letter of each string.
+Calculate the edit distance for each case and choose the smallest one.
+
+<br><br>In each case, the solution incorporates an optimal solution to a subproblem.
+<br>In cases 2, 3, and 4, we add 1 for the edit involving the final letter.</p>
+<div class="figure"><img src="editdistancetree.png" width="420"><br>Recursion tree with overlapping subproblems.<br>Source: geeksforgeeks.org
+<br><br><img src="editdistancetable.png" width="420"><br>Edit distance table. Source: xoptutorials.blogspot.com</div>
+<div class="code">the<span class="red">y</span>
+sa<span class="red">y</span>
+No edit for last letter:
+Find the distance from "the" to "sa".
+
+you
+fou<span class="red">r</span>
+Insertion:
+Find the distance from "you" to "fou" and add 1.
+
+whe<span class="red">n</span>
+the
+Deletion:
+Find the distance from "whe" to "the" and add 1.
+
+tha<span class="red">n</span>
+the<span class="red">m</span>
+Substitution:
+Find the distance from "tha" to "the" and add 1.
+</div>
+
+<h3>Using dynamic programming</h3>
+We can use a 2D array to store the answers.
+For each i and j, store the distance between the first i letters of the first string and the first j letters of the second string.
+
+<br><br><b>Runtime</b>
+<br>If the string lengths are m and n, the number of subproblems is (m+1)(n+1).
+For each subproblem we do a constant number of operations, so the runtime is O(mn).
+
+<br><br><b>Sample code</b>
+<br><a href="code/EditDistance.java">EditDistance</a> (bottom-up)
+
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Binary search tree questions</h1>
+Show what an initially empty binary search tree (it is not self-balancing) will look like after you insert all of the following elements in the given order.
+Label each node with its value.
+<br>4, 8, 5, 2, 7, 1, 3
+<br><span class="red">You can use the animations to see the correct answer.</span>
+
+<br><br>What will the tree from the previous question look like after you remove 4? (there are two possible answers)
+<br><span class="red">You can use the animations to see the correct answer.
+There are two possible answers because you can replace 4 with either the successor or the predecessor.</span>
+
+<br><br>What is the worst-case runtime of inserting an element into a binary search tree?
+Give your answer in &Theta; notation as a function of n (the number of elements).
+<br><span class="red">&Theta;(n).  The runtime depends on the height of the tree, which is &Theta;(n) in the worst case.</span>
+
+<br><br>A binary tree with 1 level must contain 1 node, but what is the maximum number of nodes in a binary tree with 5 levels?
+<br><span class="red">31 (2<sup>5</sup>-1)</span>
+
+<br><br>What must be true about the smallest element in a binary search tree?
+<br>A. It has at least 1 child.
+<br>B. It has at most 1 child.
+<br>C. It must be the root.
+<br>D. It must be a leaf.
+<br><span class="red">B</span>
+
+<br><br>For the questions below, the Node class has three fields:
+<br>E data;
+<br>Node&lt;E&gt; left;
+<br>Node&lt;E&gt; right;
+
+<br><br>Write a method
+<br><b>boolean contains(E e, Node&lt;E&gt; root)</b>
+<br>that takes the root of a binary search tree as a parameter and returns true if the tree contains element e.
+<br><span class="red">You can do it either recursively or non-recursively.
+Full answer: <a href="../classes/BSTreeSet.java">BSTreeSet</a>
+(<a href="../classes/BSTreeSetNonrecursive.java">non-recursive BSTreeSet</a>)</span>
+
+<br><br>Write a method
+<br><b>E minimum(Node&lt;E&gt; root)</b>
+<br>that takes the root of a binary search tree as a parameter and returns the minimum element.
+<br><span class="red">Repeatedly follow the left pointer as many times as you can, then return the node's data.</span>
+
+<br><br>Write a method
+<br><b>int height(Node&lt;E&gt; root)</b>
+<br>that takes the root of a binary search tree as a parameter and returns the height of the tree.
+The height is the number of edges in the longest path from root to leaf
+(a tree with only 1 node should have a height of 0, and an empty tree should have a height of -1).
+<br><span class="red">First handle the base case, then calculate the height recursively: 1 + (the larger height of the two subtrees)</span>
+
+<br><br>Write a method
+<br><b>boolean sameTree(Node&lt;E&gt; root1, Node&lt;E&gt; root2)</b>
+<br>that takes the roots of two binary search trees as parameters and returns true if the trees are the same.
+Two trees are the same if they have exactly the same structure and values.
+<br><span class="red">Base case: If both trees are empty, return true.  If one is empty and one is not empty, return false.
+<br>Recursive case: Two trees are the same if their roots have the same data, and their left subtrees are the same, and their right subtrees are the same.</span>
+
+<br><br>Write a method
+<br><b>boolean isBST(Node&lt;E&gt; root)</b>
+<br>that takes the root of a binary tree as a parameter and returns true if it is a valid binary search tree.
+Hint: Do a traversal.
+<br><span class="red">Do an in-order traversal to copy all elements into a List.  Then check if the list is in increasing order.
+<br>Alternate answer: Keep track of the previous element as you do an in-order traversal.  Check if each element is greater than the previous element.</span>
+
+</div>
+</body>
+</html>

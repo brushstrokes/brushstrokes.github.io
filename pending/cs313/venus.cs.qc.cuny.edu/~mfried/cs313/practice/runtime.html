@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Runtime questions</h1>
+<b>Give a &Theta; (big theta) estimate for each function.</b>
+<br>a. f(n) = 2<sup>30</sup>
+<br>b. f(n) = n<sup>3</sup> + 3n<sup>2</sup>
+<br>c. f(n) = n + logn
+<br>d. f(n) = (n<sup>2</sup> + n)(n - 1)
+
+<br><br><b>True or false</b>
+<br>a. sqrt(n) = O(logn).
+<br>b. If f(n) = O(g(n)), then g(n) = O(f(n)).
+<br>c. If f(n) = &Theta;(g(n)), then f(n) = O(g(n)).
+<br>d. If an algorithm's worst-case runtime is O(n<sup>2</sup>), it is possible that it takes O(n) time on every input.
+
+<br>e. If the runtimes of two algorithms are &Theta;(n<sup>2</sup>) and &Theta;(n) (best, worst, and average case),
+the &Theta;(n) algorithm definitely runs faster (i.e. takes less time to run) on every input.
+<br>f. 2<sup>n+1</sup> = O(2<sup>n</sup>).
+
+<br><br><b>What is the runtime of each method?  Give your answer in &Theta; notation as a function of n.</b>
+<pre>int foo1(int n) {
+   int x = 0;
+   for (int i = 0; i < n; ++i)
+      for (int j = 0; j < i; ++j)
+         ++x;
+   return x;
+}
+
+int foo2(int n) {
+   int x = 0;
+   while (n > 0) {
+      n = n / 2;
+      ++x;
+   }
+   return x;
+}</pre>
+
+<h2>Questions to talk about in class</h2>
+What if you have a really fast computer?
+Is an &Theta;(n<sup>2</sup>) algorithm on a fast computer faster than an &Theta;(nlogn) algorithm on a slow computer?
+
+</div>
+</body>
+</html>

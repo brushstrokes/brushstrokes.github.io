@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<div class="figure"><img src="graph.svg" width="200"><br>Graph. Source: mathsisfun.com</div>
+<p><h1>Graphs</h1>
+A <b>graph</b> consists of a set of <b>vertices</b> and a set of vertex pairs called <b>edges</b>.
+Graphs can represent many types of data such as road maps, friendships, or course prerequisites.
+
+<h2 style="clear:both">Terminology</h2>
+<div class="figure"><img src="directedundirected.jpg" width="400"><br>Source: e-education.psu.edu/geog597i_02</div>
+<ul><li>In an <b>undirected graph</b>, edges are unordered, so if the graph contains edge (x, y) then it also contains (y, x).
+In a <b>directed graph</b>, edges are ordered, so the graph may contain edge (x, y) but not (y, x).
+For example, a "shook-hands-with" graph is undirected, but a "heard-of" graph is directed.</li>
+<li>We say that two vertices are <b>adjacent</b> if they are connected by an edge.</li>
+<li>We say an edge is <b>incident</b> to a vertex if the vertex is one of its endpoints.</li>
+<li>The <b>degree</b> of a vertex is the number of edges incident to it.</li>
+<li>A <b>path</b> is a sequence of vertices connected by edges.</li>
+<li>Vertex y is <b>reachable</b> from vertex x if there is a path from x to y.</li>
+<li>The <b>length</b> of a path is its number of edges.</li>
+<li>A <b>cycle</b> is a path of at least 1 edge that starts and ends at the same vertex.</li>
+<li>A graph is <b>acyclic</b> if it has no cycles.</li>
+<li>A <b>weighted graph</b> has a numeric weight associated with each edge.</li></ul>
+
+<h2>Graph representation</h2>
+<div class="figure"><img src="adjacencymatrix.jpg" width="450"><br>Adjacency matrix. Source: btechsmartclass.com
+<br><br><img src="adjacencylist.jpg" width="450"><br>Array of adjacency lists. Source: btechsmartclass.com</div>
+There are two common ways to represent a graph:
+
+<ul><li>An <b>adjacency matrix</b>: a 2D boolean array where adj[i][j] = 1 if there is an edge from i to j, or false if there is not an edge.</li>
+<li>An <b>array of adjacency lists</b>, where adj[i] is a list of edges coming out of vertex i.</li></ul>
+In both representations, if the graph is undirected then we store each edge twice.
+<br><br><b>Comparison</b>
+<br><b>Space:</b> If a graph has V vertices and E edges, an adjacency matrix uses O(V<sup>2</sup>) space,
+and an array of adjacency lists uses O(V+E) space.  Note that E can be as large as V<sup>2</sup>.
+An array of adjacency lists uses less space if there are not a lot of edges.
+<br><b>Runtime:</b> Adjacency lists make it harder to check if a given edge is in the graph, because you have to iterate through the list.
+This is usually not a problem because in many graph algorithms we look at all outgoing edges of a vertex, not just one.</p>
+
+<b>Sample code</b>
+<br><a href="code/UndirectedGraph.java">UndirectedGraph</a> (adjacency lists representation)</p>
+
+</div>
+</body>
+</html>

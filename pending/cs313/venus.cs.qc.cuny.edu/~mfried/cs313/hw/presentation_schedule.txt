@@ -1,0 +1,12 @@
+1:40-2:55
+Apr 30: Splay tree
+May 2: B-tree
+May 7: Bloom filter, Monte Carlo tree search, Skip list
+May 9: Count-min sketch, Christofides algorithm, Fibonacci heap
+
+3:10-4:25
+Apr 30: Cuckoo hashing
+May 2: Minimax and alpha-beta pruning
+May 7: Random number generators, Fibonacci heap
+May 9: Prefix trees, Quickhull, Van Emde Boas tree
+?: Purely functional data structures

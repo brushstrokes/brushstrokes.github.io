@@ -1,0 +1,65 @@
+8puzzle: http://www.cs.princeton.edu/courses/archive/spr18/cos226/assignments/8puzzle/index.html
+activityselection: http://www.zrzahid.com/weighted-jobinterval-scheduling-activity-selection-problem/
+adjacencylist, adjacencymatrix: http://btechsmartclass.com/DS/U3_T9.html
+amortized: https://en.wikipedia.org/wiki/Amortized_analysis
+array: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html
+avl: Goodrich p. 479
+avlexample: https://www.slideshare.net/sandpoonia/lecture11-33728696
+backtracking: https://ivoroshilin.wordpress.com/2015/02/05/toughest-backtracking-problems-in-algorithmic-competitions/
+bidirectionalsearch: Artificial Intelligence: A Modern Approach p. 91
+bigo, bigomega, bigtheta: http://btechsmartclass.com/DS/U1_T5.html
+binarysearch, linearsearch: http://www.geeksforgeeks.org/linear-search-vs-binary-search/
+binarytree, bst: https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html
+binarytreenode, bstsearch, bstdeletion: http://algorithms.tutorialhorizon.com/binary-search-tree-complete-implementation/
+bottomupheap: Goodrich p. 381
+bucketsort: https://www.geeksforgeeks.org/bucket-sort-2/
+circularlinkeddummy: http://ironbark.xtelco.net.au/subjects/IOO/lectures/lecture19.html
+clustering: Sedgewick p. 472
+countingsort: https://brilliant.org/wiki/counting-sort/
+deque: http://www.java2novice.com/data-structures-in-java/queue/double-ended-queue/
+dfs, bfs: Sedgewick pp. 533, 539
+dijkstra: Cormen p. 659
+directedacyclic: https://www.geeksforgeeks.org/topological-sorting/
+directedundirected: https://www.e-education.psu.edu/geog597i_02/node/832
+doublylinkeddummy: http://condor.depaul.edu/ntomuro/courses/300/notes/lecture10.html
+doublylinked, doublylinkedinsert: https://www.geeksforgeeks.org/doubly-linked-list/
+editdistance: https://www.ideserve.co.in/learn/edit-distance-dynamic-programming
+editdistancetree: https://www.geeksforgeeks.org/dynamic-programming-set-5-edit-distance/
+editdistancetable: https://xoptutorials.blogspot.com/2014/09/edit-distance-levenshtein-distance.html
+expressiontree: http://codinghelmet.com/?path=exercises/expression-evaluator
+goodpartition: Skiena p. 126
+graph: https://www.mathsisfun.com/activity/seven-bridges-konigsberg.html
+hashfunction: https://en.wikipedia.org/wiki/Hash_function
+heapsort: https://www.kullabs.com/uploads/heapsort.png
+insertionsort: https://www.geeksforgeeks.org/insertion-sort/
+leftleft, rightright, leftright, rightleft: https://www.cpp.edu/~ftang/courses/CS241/notes/self%20balance%20bst.htm
+linkedlist: http://www.geeksforgeeks.org/linked-list-set-1-introduction/
+listiterator: https://cis.temple.edu/~ingargio/cis67/BigJava2Slides/slides20/
+mergesort: http://www.mcs.anl.gov/~itf/dbpp/text/node127.html
+mergesortruntime: Goodrich p. 539
+minheap, heapinsertion, heapdeletion: http://www.techiedelight.com/introduction-priority-queues-using-binary-heaps/
+parsetree: http://www.cs.cornell.edu/courses/cs2112/2018fa/lectures/lecture.html?id=parsing
+polynomialhash: http://www.mathcs.emory.edu/~cheung/Courses/323/Syllabus/Map/hash-func.html
+queue: http://www.studytonight.com/data-structures/queue-data-structure
+quicksort: http://www.techiedelight.com/quicksort/
+quicksortpartitioning: https://www.hackerrank.com/challenges/quicksort3/problem
+radixsort: http://www.cs.uah.edu/~rcoleman/CS221/Sorting/RadixSort.html
+rodcutting: Cormen p. 361
+rodcuttingarray: Cormen p. 360
+rodcuttingrecursion: http://cdn.cs50.net/2017/fall/lectures/7/lecture7.pdf
+rodcuttingtree: Cormen p. 364
+rubikscube: https://en.wikipedia.org/wiki/Rubik%27s_Cube
+runtimecases: Skiena p. 33
+selectionsort: https://www.hackerearth.com/practice/algorithms/sorting/selection-sort/tutorial/
+separatechaining, linearprobing: https://en.wikipedia.org/wiki/Hash_table
+singlylinkeddummy: http://web.cecs.pdx.edu/~karlaf/CS163_Notes/CS163_Notes%234.htm
+sortingdecisiontree: https://www.cs.princeton.edu/courses/archive/fall15/cos226/flipped/quizzes/mergesortQuiz.html
+stablesort: https://en.wikipedia.org/wiki/Sorting_algorithm
+stack: http://www.studytonight.com/data-structures/stack-data-structure
+sudoku: https://en.wikipedia.org/wiki/Sudoku
+symboltable: Sedgewick p. 362
+topologicalsort: http://www.techiedelight.com/topological-sorting-dag/
+treerotation: https://en.wikipedia.org/wiki/Tree_rotation
+treetraversal, levelorder: http://cs-people.bu.edu/tvashwin/cs112_spring09/lab06.html
+unbalancedtree: https://helloacm.com/how-to-check-balanced-binary-tree-in-cc/
+unweightedgraph, weightedgraph: cs.usfca.edu/~galles

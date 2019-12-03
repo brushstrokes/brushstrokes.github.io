@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Stacks, queues, deques</h1>
+Stacks, queues, and deques allow you to insert or remove elements at the end(s).
+<br>They can be implemented with either an array or a linked list.
+
+<div class="figure"><img src="deque.png" width="400"><br>Deque. Source: java2novice.com</div>
+<h2>Deque</h2>
+In a <b>deque</b> (short for double-ended queue), insertion and deletion can be done at both ends.
+<br>This means that a deque can be used as either a stack or a queue.
+<br><a href="https://docs.oracle.com/javase/7/docs/api/java/util/ArrayDeque.html">ArrayDeque</a> (JCF) is an array implementation of the
+<a href="https://docs.oracle.com/javase/7/docs/api/java/util/Deque.html">Deque</a> interface.
+<br><a href="https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html">LinkedList</a> (JCF) is a doubly-linked list implementation of the
+<a href="https://docs.oracle.com/javase/7/docs/api/java/util/Deque.html">Deque</a> interface.
+
+<h2 style="clear:both;">Stack</h2>
+<div class="figure"><img src="stack.png" width="400"><br>Stack. Source: studytonight.com</div>
+In a <b>stack</b>, insertion and deletion are done at the same end.
+<br>It is a last-in-first-out (LIFO) data structure.
+<ul><li><b>Push</b> adds an element to the top.</li>
+<li><b>Pop</b> removes an element from the top.</li></ul>
+The JCF does not have a Stack interface.
+<br>Both ArrayDeque and LinkedList can be used as a stack because they implement Deque.
+<br>The API does not recommend using the <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Stack.html">Stack</a> (JCF) class.
+
+<h2 style="clear:both;">Queue</h2>
+<div class="figure"><img src="queue.png" width="400"><br>Queue. Source: studytonight.com</div>
+In a <b>queue</b>, insertion and deletion are done at different ends.
+<br>It is a first-in-first-out (FIFO) data structure.
+<ul><li><b>Enqueue</b> adds an element to the end.</li>
+<li><b>Dequeue</b> removes an element from the front.</li></ul>
+The <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html">Queue</a> interface
+is a superinterface of Deque, which means that both ArrayDeque and LinkedList implement it.
+
+<h2>Example uses</h2>
+<ul><li><b>Stacks</b> may be used to check if braces are properly matched, or to evaluate postfix expressions.</li>
+<li><b>Queues</b> may be used to implement job scheduling, or to implement breadth-first search.</li></ul>
+
+<h2 style="clear:both;">ArrayDeque implementation</h2>
+<b>Sample code</b>
+<br><b>Class:</b> <a href="classes/ArrayQueue.java">ArrayQueue</a>
+<br><b>Interface:</b> <a href="classes/Queue.java">Queue</a>
+<br>This is a simplified implementation of <a href="https://docs.oracle.com/javase/7/docs/api/java/util/ArrayDeque.html">ArrayDeque</a>
+from the JCF (only the Queue operations are implemented).
+<br><br>ArrayDeque (JCF) is implemented with a circular array.  It keeps track of the indices of the front and back of the deque.
+<br>If front or back goes past either end, it wraps around to the other end.
+<br>When it runs out of space, it copies the elements into a new larger array.
+<ul><li>When removing an element, we set the reference to null so the garbage collector can delete the object (Goodrich p. 232).</li></ul>
+
+</div>
+</body>
+</html>

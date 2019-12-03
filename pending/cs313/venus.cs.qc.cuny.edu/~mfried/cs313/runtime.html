@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Runtime analysis</h1>
+<div class="figure"><img src="runtime.png" width="495"><br>Insertion sort is O(n<sup>2</sup>). Quicksort is O(n log n).</div>
+<b>Runtime</b> is the most common way to judge how efficient a data structure or algorithm is.
+<br>An algorithm may be fast for small inputs but slow for large inputs, so we want to know the runtime as a function of the input size.
+<br><b>Input size</b> is often measured by the number of items in the input,
+but if the items can be large (e.g. BigIntegers), we may want to measure input size by number of bits.
+<br>We can analyze runtime by running the program with different input sizes and timing it (sample <a href="code/Timer.java">Timer</a> code)
+(<a href="code/Timer.cpp">C++ version</a>).
+
+<br><br>However, sometimes we would like to analyze an algorithm's runtime theoretically, before implementating it.
+
+<h2>Big O notation</h2>
+Calculating the exact runtime of an algorithm is difficult,
+because it depends on the machine, the programming language, and the implementation of the algorithm.
+<br>Instead of calculating the exact runtime or number of operations,
+we can estimate the runtime using <b>big O notaton</b>, which ignores constant factors.
+<br>We associate with each algorithm a function f(n), which is the number of operations performed for input size n.</p>
+<div class="code">We say that f(n) is O(g(n)) if for some positive constants c and n<sub>0</sub>,
+f(n) &le; cg(n)
+for all n &ge; n<sub>0</sub>
+</div>
+
+<div class="figure"><img src="bigo.png" width="400"><br>f(n) is O(g(n)). Source: btechsmartclass.com</div>
+<p>For example, if an algorithm's runtime is O(n), then the runtime is &le; c * n for all sufficiently large n.
+<br>We can also use big O notation to describe how much space an algorithm uses.
+Sometimes space is described in terms of extra space (not including the space used by the input).
+
+<br><br><b>Example</b>
+<br>3n<sup>2</sup> + 100n is O(n<sup>2</sup>).
+<br>A simple way to find the big O is by looking at the largest exponent.  As n becomes large, the 100n becomes insignificant.
+
+<h2>Analyzing code</h2>
+Basic operations such as comparison or arithmetic take constant time.
+<br>A loop that repeats n times, with a constant number of operations per loop, takes O(n) time.
+<br>A nested loop where each loop repeats n times takes O(n<sup>2</sup>) time.
+<br>A loop that repeatedly halves n takes O(logn) time.
+
+<h2>Common runtimes</h2>
+Below are some common runtimes, expressed using big O notation.</p>
+<div class="code">Runtime      Name                 Example algorithm
+O(1)         Constant time        Access an array element by index
+O(log n)     Logarithmic time     Binary search
+O(n)         Linear time          Finding the min of an unsorted array
+O(n log n)                        Mergesort
+O(n<sup>2</sup>)        Quadratic time       Insertion sort
+O(n<sup>c</sup>)        Polynomial time
+(c is a constant)
+</div>
+
+<div class="figure"><img src="runtimecases.png" width="386"><br>Best, average, and worst case runtime. Source: Skiena p. 33</div>
+
+<p><h2>Best/average/worst case</h2>
+An algorithm may be faster on some inputs than others.
+Usually we consider either the worst-case runtime or the average-case runtime.
+The worst-case runtime is the maximum runtime for any input of each size.
+The average-case runtime is the average runtime for all possible inputs of each size.
+The best-case runtime is the minimum runtime for any input of each size.
+
+<h2 style="clear:both">Big O, Big Omega (&Omega;), Big Theta (&Theta;)</h2>
+We use big O to give an upper bound on the runtime.
+Similarly, we can use Big Omega to give a lower bound on the runtime,
+or Big Theta to give both an upper bound and a lower bound.</p>
+<div class="code">We say that f(n) is &Omega;(g(n)) if for some positive constants c and n<sub>0</sub>,
+cg(n) &le; f(n)
+for all n &ge; n<sub>0</sub>
+
+We say that f(n) is &Theta;(g(n)) if for some positive constants c<sub>1</sub>, c<sub>2</sub>, and n<sub>0</sub>,
+c<sub>1</sub>g(n) &le; f(n) &le; c<sub>2</sub>g(n)
+for all n &ge; n<sub>0</sub>
+</div>
+<div class="figure"><img src="bigomega.png" width="400"><br>f(n) is &Omega;(g(n)). Source: btechsmartclass.com</div>
+<div class="figure"><img src="bigtheta.png" width="400"><br>f(n) is &Theta;(g(n)). Source: btechsmartclass.com</div>
+
+<br style="clear:both"><br><b>A few useful rules</b>
+<ul><li>Largest exponent rule: If a<sub>k</sub> &gt; 0, then a<sub>k</sub>n<sup>k</sup> + a<sub>k-1</sub>n<sup>k-1</sup> + ... + a<sub>1</sub>n + a<sub>0</sub> is &Theta;(n<sup>k</sup>).
+<br>(the a's and k's are constants)</li>
+<li>Addition rule: If f(n) is O(g(n)) and h(n) is O(i(n)), then f(n) + h(n) is O(g(n) + i(n)).</li>
+<li>Multiplication rule: If f(n) is O(g(n)) and h(n) is O(i(n)), then f(n)h(n) is O(g(n)i(n)).</li>
+<li>For any constant k > 0, n<sup>k</sup> increases at a faster rate than logn.
+<br>In other words, logn is O(n<sup>k</sup>), but n<sup>k</sup> is not O(logn).</li></ul>
+
+</div>
+</body>
+</html>

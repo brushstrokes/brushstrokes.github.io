@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Homework 1: linked list</h1>
+You have been given the following code:
+<br><b>Class:</b> <a href="LinkedList.java">LinkedList</a>
+<br><b>Interfaces:</b> <a href="List.java">List</a> / <a href="Stack.java">Stack</a>
+<br>Driver class to use for testing: <a href="HW1.java">HW1.java</a>
+<br><a href="hw1_output.txt">Sample output</a>
+
+<br><br>The LinkedList class implements both the List interface and the Stack interface, but several methods (listed below) are missing bodies.
+Write the code so it works correctly.  You should submit one file, LinkedList.java.
+
+<br><br>Do not change the interfaces.  Do not change the public method headers.  Do not rename the LinkedList class.
+<br>If you change them, it will not work when I test it.
+<br>The given code uses a dummy node.  If you prefer not to use a dummy node, you may change it.
+
+<br><br>None of your methods should print anything to the console.  All of the printing happens in HW1.java.
+<br>Any method that adds or removes an element should update size appropriately.
+
+<br><br><b>public String toString()</b>
+<br>Returns a String representation of the linked list.
+<br>Your format does not have to be exactly the same as mine, but the String must include every element (not including the dummy node).
+<br>Examples of acceptable formats are "[1, 2, 3]", "[1,2,3]", "[ 1 2 3 ]", "1 2 3".
+
+<br><br><b>public void clear()</b>
+<br>Removes all elements.  Don't forget to update everything that needs to be updated.
+
+<br><br><b>public boolean remove(E e)</b>
+<br>Removes the first occurrence of the specified element, if it is present.
+For example, remove(7) removes the first element equal to 7 (use the equals method to compare elements).
+<br>Returns true if the list has been modified, or return false if the list has not been modified.
+<br>If the node you removed is the last node, don't forget to update last.
+
+<br><br><b>public void push(E e)</b>
+<br>Adds element e to the top of the stack.
+<br>push and pop must happen on the same side.
+<br>The "top" to be at the beginning of the linked list,
+because there's no efficient way to remove the last node of a singly-linked list.
+
+<br><br><b>public E pop()</b>
+<br>Removes and returns the top element of the stack, or throws a NoSuchElementException if the stack is empty.
+
+<br><br><b>public E top()</b>
+<br>Returns but does not remove the top element of the stack, or throws a NoSuchElementException if the stack is empty.
+
+</div>
+</body>
+</html>

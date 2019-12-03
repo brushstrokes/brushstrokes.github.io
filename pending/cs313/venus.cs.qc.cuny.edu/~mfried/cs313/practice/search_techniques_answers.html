@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Search techniques questions</h1>
+The goal of Sudoku is to fill a 9x9 grid with numbers from 1-9 such that no number occurs twice in the same row, column, or box.
+It can be solved with backtracking.  Explain the advantage of using depth-first search instead of breadth-first search to solve this problem.
+<br><span class="red">Depth-first search uses less space.
+It uses space proportional to the depth of the search tree, which in this example is the number of initially empty squares.</span>
+
+<br><br>Explain iterative deepening depth-first search.  How does it differ from normal depth-first search?
+<br><span class="red">Run depth-first search with a limited depth, once for each depth:
+begin with depth 0, then depth 1, etc, until you find the solution.</span>
+
+<br><br>What is the main advantage of iterative deepening depth-first search compared to breadth-first search?
+<br><span class="red">It uses less space.</span>
+
+<br><br>Suppose you want to find the shortest path from vertex s to vertex t in an unweighted undirected graph.
+If you use bidirectional search, what is the runtime?
+Give your answer in big O notation as a function of b (the branching factor) and d (the length of the shortest path).
+<br><span class="red">O(b<sup>d/2</sup>).  You do two searches, each with a depth of d/2.</span>
+
+<br><br>In bidirectional search, we run two simultaneous searches.
+Each time we visit a vertex, we need to quickly check if the other search has already visited the same vertex.
+Which data structure would you use for this?
+<br><span class="red">If the vertices are numbered, we can use two boolean arrays, one for each search.
+If we are searching an implicit graph, as in the Rubik's Cube example,
+and we generate the moves as we go, we can use two hash tables.</span>
+
+<br><br>Explain how vertices are evaluated in A* search.  What quantities do we need to estimate, and what calculations do we need to do?
+<br><span class="red">Vertices are evaluated by calculating g(n) + h(n),
+where where g(n) is the cost to reach the node, and h(n) is a heuristic function that estimates the cost to reach the goal.
+
+</div>
+</body>
+</html>

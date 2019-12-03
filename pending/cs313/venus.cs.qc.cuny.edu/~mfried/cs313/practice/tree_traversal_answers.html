@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Tree traveral questions</h1>
+<div class="figure"><img src="../bst.jpeg" width="300"><br>Binary search tree. Source: cs.cmu.edu/~adamchik</div>
+In what order will the elements of the tree be visited in each type of traversal? (in-order, pre-order, post-order, level-order)
+<br><span class="red">in-order: 4, 6, 8, 10, 15, 18, 21
+<br>Each element is visited after any element in its left subtree and before any element in its right subtree.
+<br><br>pre-order: 10, 6, 4, 8, 18, 15, 21
+<br>Each element is visited before any of its descendents.
+<br><br>post-order: 4, 8, 6, 15, 21, 18, 10
+<br>Each element is visited after any of its descendents.
+<br><br>level-order: 10, 6, 18, 4, 8, 15, 21
+<br>Each level is printed from left to right, starting with the top level and ending with the bottom level.</span>
+
+<br><br>What is the worst-case runtime of an in-order traversal of an entire tree tree?
+You may assume that the "visit" operation on each node takes constant time.
+Give your answer in &Theta; notation as a function of n (the number of nodes).
+<br><span class="red">&Theta;(n).  The method is called once for each node of the tree,
+and there are a constant number of operations within each method call.</span>
+
+<br><br>For the questions below, the Node class has three fields:
+<br>E data;
+<br>Node&lt;E&gt; left;
+<br>Node&lt;E&gt; right;
+
+<br><br>Write a method
+<br><b>void inOrder(Node&lt;E&gt; root)</b>
+<br>that takes the root of a binary tree as a parameter and prints all elements of the tree in-order (one per line).
+<br><span class="red">Full answer: <a href="../code/TraversableTree.java">TraversableTree</a></span>
+
+<br><br>Write a method
+<br><b>void levelOrder(Node&lt;E&gt; root)</b>
+<br>that takes the root of a binary tree as a parameter and prints all elements of the tree in level-order (one per line).
+<br><span class="red">Full answer: <a href="../code/TraversableTree.java">TraversableTree</a></span>
+
+</div>
+</body>
+</html>

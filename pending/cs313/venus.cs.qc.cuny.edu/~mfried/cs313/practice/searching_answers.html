@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Searching questions</h1>
+<b>What is the runtime of each search algorithm?  Give your answer in &Theta; notation as a function of n (the number of elements).</b>
+<br>Linear search (average-case)
+<br><span class="red">&Theta;(n)</span>
+<br>Linear search (worst-case)
+<br><span class="red">&Theta;(n)</span>
+<br>Binary search (average-case)
+<br><span class="red">&Theta;(logn)</span>
+<br>Binary search (worst-case)
+<br><span class="red">&Theta;(logn)</span>
+
+<br><br><b>Multiple choice</b>
+<br>Which search algorithm should you use to find a number in an unsorted array?
+<br>A. Linear search
+<br>B. Binary search
+<br>C. Interpolation search
+<br><span class="red">Linear search.  For binary search and interpolation search, the array must be sorted.</span>
+
+<br><br>Suppose we modify binary search.  Every time we look at the middle element, we also look at the elements immediately to the left and right.
+If we get lucky, we can end the search early.  How does this strategy affect the worst-case runtime?
+<br>A. Faster
+<br>B. Slower (but still the same big O)
+<br>C. No difference
+<br><span class="red">Slower (but still the same big O).  The range is still roughly halved in each iteration,
+but we perform 3 times as many comparisons, so it is slower by a constant factor.</span>
+
+<br><br>Binary search is not very useful for searching linked lists.  Explain why.
+<br><span class="red">In a linked list, we cannot quickly access the middle element.</span>
+
+<h2>Questions to talk about in class</h2>
+Write a method
+<br><b>boolean perfectSquare(int n)</b>
+<br>that returns true if n is a perfect square.  You may not use Math.sqrt and the runtime must be O(logn).
+<br><span class="red">Binary search to try to find a number whose square is n.  Initialize low = 0 and high = n.
+Note that mid*mid may overflow, so you can avoid this by using a long.</span>
+
+<br><br>You want to look up the word "binary" in a dictionary as fast as possible (a book, not an online dictionary).  How would you do it?
+<br><span class="red">Interpolation search because we know the approximate distribution of English words.</span>
+
+</div>
+</body>
+</html>

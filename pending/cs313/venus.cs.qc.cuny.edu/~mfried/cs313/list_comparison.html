@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>ArrayList vs ArrayDeque vs LinkedList: which one is best?</h1>
+It depends what you're doing.  Each one has advantages and disadvantages.
+
+<h2>Accessing an element by index</h2>
+<ul><li><b>ArrayList:</b> O(1).</li>
+<li><b>ArrayDeque:</b> The JCF implementation does not allow accessing elements by index (C++ deques allow this operation, and it's O(1)).</li>
+<li><b>LinkedList</b> (doubly-linked): Worst-case O(n) for elements in the middle.
+Elements close to the front or back are accessed faster.</li></ul></p>
+
+<div class="figure"><img src="amortized.png" width="325"><br>Runtime per push operation<br>Source: wikipedia.org</div>
+<h2>Insertion/deletion by index</h2>
+<ul><li><b>ArrayList:</b> Worst-case O(n) because you have to shift elements.
+Insertion/deletion at the end is faster because there are fewer elements to shift.
+If you insert when the Arraylist is full, you have to copy the elements into a new larger array, which is O(n).
+<ul><li>Insertion at the end of an ArrayList takes <b>amortized constant time</b>.
+This means that a sequence of n insertions into an initially empty ArrayList has a worst-case runtime of O(n),
+so the average runtime per insertion is O(1), although some insertions may be slower.
+This is achieved by always increasing the array size by a constant factor,
+because the total number of elements copied is the sum of a geometric series.</li></ul></li>
+<li><b>ArrayDeque:</b> Deletion at the front or back is O(1), and insertion at the front or back takes amortized constant time.
+The JCF implementation does not allow insertion/deletion by index
+(if it was allowed, it would be worst-case O(n) because of shifting).</li>
+<li><b>LinkedList</b> (doubly-linked): Insertion/deletion at the front or back is worst-case O(1).
+Insertion/deletion by index is worst-case O(n) because you have to traverse the list to find the correct spot.
+If you have an <a href="iterators.html">iterator</a> at the correct spot, insertion/deletion is O(1).</li></ul>
+<div class="figure"><img src="amortizedcopies.png" width="547"></div>
+
+<h2>Space</h2>
+A LinkedList uses more space per element because it has 2 pointers per node.
+<br>However, an ArrayList or ArrayDeque may have unused elements (if the capacity is larger than the size).
+
+<h2>Summary</h2>
+Sometimes it is difficult to predict which one is best without testing, but here are a few tips:
+<ul><li>Use an ArrayList if you need to access elements by index and you only need to insert/delete at the end.</li>
+<li>Use an ArrayDeque as a stack, queue, or deque.</li>
+<li>Use a LinkedList if you need to insert/delete while iterating through the list,
+or if you need insertion at the ends to be worst-case O(1).</li></ul></p>
+
+</div>
+</body>
+</html>

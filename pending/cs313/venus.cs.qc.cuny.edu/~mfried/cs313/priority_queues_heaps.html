@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Priority queues</h1>
+A <b>priority queue</b> is similar to a regular queue, except each element has a priority,
+and the highest-priority element is always the one that gets removed.
+
+<br><br>Priority queues are typically implemented with a heap.
+<br><a href="https://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html">PriorityQueue</a> (JCF)
+uses a heap and implements the <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html">Queue</a> interface.
+
+<div class="figure"><img src="minheap.png" width="500"><br>Array representation of a min heap. Source: techiedelight.com</div>
+<h2>Heaps</h2>
+A <b>binary heap</b> is a binary tree with the following two properties:
+<ul><li>Every node's key is greater than or equal to its children's keys (if it's a max heap)
+or less than or equal to its children's keys (if it's a min heap).  The highest-priority element is at the root of the tree.</li>
+<li>It is a complete tree, which means that every level (except possibly the bottom level) is completely filled,
+and the nodes in the bottom level are as far left as possible.
+A complete tree can be efficiently represented an array.
+This saves space because we do not have to store pointers.</li></ul>
+Unlike a binary search tree, a heap may have duplicates.
+
+<h2>Insertion (min heap)</h2>
+<ul><li>Place the new element one spot after the last element (the new element becomes the rightmost element of the bottom level).</li>
+<li>While this element is smaller than its parent:
+<ul><li>Move this element upward by swapping it with its parent.</li></ul></li></ul>
+(also known as bubble-up or sift-up)
+<div class="figure"><img src="heapinsertion.png" width="750"><br>Heap insertion. Source: techiedelight.com</div>
+
+<h2 style="clear:both">Deletion (min heap)</h2>
+<ul><li>Move the last element (the rightmost element of the bottom level) to the root of the heap (replacing the previous root).</li>
+<li>While this element is larger than one or both children:
+<ul><li>Move this element downward by swapping it with its smaller child.</li></ul></li></ul>
+(also known as bubble-down or sift-down)
+<div class="figure"><img src="heapdeletion.png" width="750"><br>Heap deletion. Source: techiedelight.com</div>
+
+<h2 style="clear:both">Runtime</h2>
+The height of the heap is O(logn), so in the worst case, both insertion and deletion perform O(logn) comparisons and swaps.
+Therefore the worst-case runtime is O(logn) (assuming the heap doesn't run out of space).
+
+<h2>Implementation</h2>
+<b>Sample code</b>
+<br><b>Class:</b> <a href="classes/PriorityQueue.java">PriorityQueue</a>
+<br>Implemented with a min heap.
+<ul><li>In this implementation, the root is at heap[1] (heap[0] is unused).
+<br>heap[i]'s parent is heap[i/2], and heap[i]'s children are heap[i*2] and heap[i*2+1].</li>
+<li>In this implementation, each element's value is its priority.
+Some implementations use key-value pairs (where the key is the priority).</li></ul>
+
+<div class="figure"><img src="bottomupheap.png" width="519"><br>Source: Goodrich p. 381</div>
+<h2>Building a heap bottom-up</h2>
+Inserting n elements into a heap takes O(nlogn) time in the worst case,
+but if we are given an array of n elements, we can convert it to a heap in O(n) time in the worst case. (proof: Goodrich p. 383)
+<br><br>Before we begin, note that every leaf is already a 1-element heap.
+<br>For each position i, starting at the last non-leaf and ending at the root, bubble-down heap[i].
+<br>Both subtrees of heap[i] are already heaps, so after bubbling-down, the subtree rooted at heap[i] is a heap.
+
+<br><br>Intuitively, this is faster because most of the elements of a heap are close to the bottom,
+so when we bubble-down each element, most elements do not have to be moved far.
+
+<br><br>On the other hand, if we build the heap by inserting one element at a time, and bubble-up each element,
+in the worst case every element must be moved all the way to the root.</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Graph algorithms questions</h1>
+Which type of graph traversal is typically used to find a path with the minimal number of edges?
+<br>A. Breadth-first search
+<br>B. Depth-first search
+<br><span class="red">Breadth-first search.</span>
+
+<br><br>Below is the array of adjacency lists for the directed graph pictured to the right.
+<div class="figure"><img src="../unweightedgraph.png" width="344"><br>Unweighted directed graph. Source: cs.usfca.edu/~galles</div>
+<pre>0: 1
+1:
+2: 6
+3: 5, 7
+4:
+5: 1
+6: 4, 5
+7: 5, 6
+(the first number after the : is the first neighbor,
+for example 3's first neighbor is 5)
+</pre>
+Suppose you call dfs(3).  List the marked vertices in the order that they are marked.
+<br><span class="red">3, 5, 1, 7, 6, 4
+<br>Note that the order in which we visit a vertex's neighbors depends on their order in the adjacency list.</span>
+
+<br><br>Suppose you call bfs(3).  List the marked vertices in the order that they are marked.
+<br><span class="red">3, 5, 7, 1, 6, 4
+<br>Note that the order in which we visit a vertex's neighbors depends on their order in the adjacency list.</span>
+
+<p style="clear:both">Give a topological sort of this graph (list the vertices).
+<br><span class="red">5, 4, 2, 0, 3, 1 (there are many correct answers)
+<br>Note that any directed acyclic graph can be topologically sorted.
+There does not need to be a vertex from which all others are reachable.</span>
+<div class="figure" style="float:left"><img src="../directedacyclic.png" width="300"><br>Directed acyclic graph. Source: geeksforgeeks.org</div>
+
+</div>
+</body>
+</html>

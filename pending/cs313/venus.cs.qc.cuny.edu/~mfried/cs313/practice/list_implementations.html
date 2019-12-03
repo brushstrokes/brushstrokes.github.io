@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>List implementation questions</h1>
+<b>What is the worst-case runtime of each operation?  Give your answer in &Theta; notation as a function of n (the number of elements).</b>
+<br><b>ArrayList</b>
+<br>Accessing an element by index
+<br>Inserting a new element at the beginning (at index 0)
+<br><b>LinkedList</b>
+<br>Accessing an element by index
+<br>Inserting a new element by index
+
+<br><br>In the JCF LinkedList implementation, accessing an element by index takes longer for elements close to the middle.  Explain why.
+
+<br><br><b>Below is an implementation of a singly-linked list.  Fill in the missing methods.</b>
+<pre>public class LinkedList&lt;E&gt; {
+   private Node&lt;E&gt; first, last;
+   private int size = 0;
+
+   // Creates an empty list.  It's your choice whether or not to use a dummy node.
+   public LinkedList() {
+      
+
+   }
+
+   // Adds the element to the end of the list.
+   public void addLast(E e) {
+      
+
+
+
+
+   }
+
+   // Removes the first occurrence of the specified element, if it is present.
+   public void remove(E e) {
+
+
+
+
+
+
+   }
+
+   private static class Node&lt;E&gt; {
+      E data;
+      Node&lt;E&gt; next;
+      Node(E data, Node&lt;E&gt; next) {
+         this.data = data;
+         this.next = next;
+      }
+   }
+}
+</pre>
+
+</div>
+</body>
+</html>

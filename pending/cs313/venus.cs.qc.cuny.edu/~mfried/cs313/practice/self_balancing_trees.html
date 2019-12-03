@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<h1>Self-balancing trees questions</h1>
+What is the worst-case runtime of inserting an element into an AVL tree (including the time it takes to rebalance the tree)?
+Give your answer in &Theta; notation as a function of n (the number of elements).
+
+<br><br>True or false: For any node in an AVL tree,
+the number of nodes in its left subtree and the number of nodes in its right subtree differ by no more than 1.
+
+<br><br>Explain what it means when we say that an AVL tree is height-balanced.
+
+<br><br>An AVL tree with 1 level must contain 1 node, but what is the minimum number of nodes in an AVL tree with 5 levels?
+
+<div class="figure"><img src="../avl.png" width="247"><br>AVL tree.  The blue numbers are heights.<br>Source: Goodrich p. 479</div>
+<br><br>Suppose you insert 35 into the AVL tree.  Show what the tree looks like after performing all necessary rotations to rebalance the tree.
+
+<br><br>Suppose you then insert 55 into the same tree.  Show what the tree looks like after performing all necessary rotations to rebalance the tree.
+
+<br><br>What if you use a sorted resizable array to implement a set?  What advantage does an AVL tree have?
+<br>A. Faster insertion and deletion
+<br>B. Faster searching
+<br>C. It uses less space
+<br>D. You can find the minimum element more quickly
+
+<br style="clear:both"><br>For the question below, the Node class three fields:
+<br>E data;
+<br>Node&lt;E&gt; left;
+<br>Node&lt;E&gt; right;
+
+<div class="figure"><img src="../leftleft.jpeg" width="400"><br>Source: cpp.edu/~ftang</div>
+
+<br><br>Write a method
+<br><b>Node&lt;E&gt; rotateRight(Node&lt;E&gt; root)</b>
+<br>that takes a subtree's root as a parameter, performs a right rotation, and returns the new root.
+For example, if the parameter is the node labeled 5 in the tree on the left,
+transform it into the tree on the right and return the node labeled 3.
+You do not have to update the heights or balance factors.
+
+</div>
+</body>
+</html>

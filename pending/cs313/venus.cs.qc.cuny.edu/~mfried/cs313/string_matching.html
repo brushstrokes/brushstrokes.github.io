@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>String matching</h1>
+We are given a text string of length n, and a pattern of length m,
+and we want to know if the pattern occurs within the text, and if so, where it occurs.
+How can we search efficiently?
+
+<h2>Brute-force</h2>
+A simple algorithm is to search for the first character of the pattern within the text.
+Each time the first character matches, check if the entire pattern matches.
+The first character will match at most n-m+1 times, and checking the entire pattern takes at most m comparisons,
+so the worst-case runtime is O((n-m+1)m).
+<br>An example of the worst case: searching for "AAAAB" within "AAAAAAAAB".
+
+<br><br>Fortunately there are faster algorithms.  A few well-known string matching algorithms are KMP, Boyer-Moore, and Rabin-Karp.
+
+<h2>Rabin-Karp</h2>
+The <b>Rabin-Karp algorithm</b> is based on hashing.
+Instead of comparing the pattern to each m-character substring of the text,
+we compare the hash of the pattern to the hash of each m-character substring of the text.
+If the hashes match, we verify that the strings match.  False positives are rare, so it will almost certainly be a match.
+
+<br><br>The key idea of the algorithm is that if we already know the hash of an m-character substring,
+we can compute the hash of the next m-character substring in constant time.</p>
+<div class="code">ASCII codes: H=72   E=69   L=76   L=76   O=79
+
+<span class="red">HELL</span>O     Hash("HELL") = 72a<sup>3</sup> + 69a<sup>2</sup> + 76a<sup>1</sup> + 76a<sup>0</sup>
+H<span class="red">ELLO</span>     Hash("ELLO") =        69a<sup>3</sup> + 76a<sup>2</sup> + 76a<sup>1</sup> + 79a<sup>0</sup>
+</div>
+<p>If we are given Hash("HELL"), we can compute Hash("ELLO") in 3 steps: Subtract 72a<sup>3</sup>, multiply by a, and add 79a<sup>0</sup>.
+a=256 is a common choice.  Calculations are done mod a large prime.
+
+<br><br><b>Runtime</b>
+<br>Computing the hash of the pattern and the first substring of the text takes O(m) time.
+There are n-m additional hashes to compute and compare.
+Computing each hash takes constant time, and comparing each hash takes constant time.
+Verifying the match by comparing the strings takes O(m) time.
+If we are unlucky and get false positives, we may have to compare strings multiple times.
+However, it is rare for two different strings to have the same hash, so the total expected runtime is O(n+m).
+
+<br><br><b>Sample code</b>
+<br><a href="code/StringMatching.java">StringMatching</a> (Rabin-Karp)</p>
+
+</div>
+</body>
+</html>

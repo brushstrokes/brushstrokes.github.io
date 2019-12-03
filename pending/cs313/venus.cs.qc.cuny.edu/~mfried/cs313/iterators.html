@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Iterators</h1>
+An <b>iterator</b> is an object that allows you to traverse through a collection of elements one at a time.
+In data structures that don't allow accessing elements by index, using an iterator may be the only way to traverse the collection.
+<br>Every type of collection in the JCF implements the <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html">Iterable</a>
+interface, and therefore has an <b>iterator()</b> method that returns an iterator object.
+The iterator class is typically a nested class that implements the
+<a href="https://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html">Iterator</a> interface, which requires two methods:
+
+<div class="figure"><img src="listiterator.png" width="400"><br>List iterator. (the red line is the iterator position)<br>Source: cis.temple.edu/~ingargio</div>
+<ul><li><b>next()</b> returns the next element.</li>
+<li><b>hasNext()</b> returns true if there is a next element.</li>
+<li>The optional <b>remove()</b> method removes the last element returned by next() or previous().</li></ul>
+
+This means we can iterate through any type of collection using the same code.
+
+<br><br>Lists (e.g. ArrayList, LinkedList) also have a listIterator() method that returns a ListIterator,
+which is a subinterface of Iterator.  It includes the methods above, and additional methods
+such as previous(), hasPrevious(), and add(E e).
+
+<br><br><b>Sample code</b>
+<br><a href="code/UsingIterators.java">UsingIterators</a> - Shows how to use Iterators in the JCF.
+<br>(see also <a href="code/UsingIterators.cpp">C++ version</a>)
+
+<h2>For-each loops</h2>
+A for-each loop can be used to loop through the elements of any container that implements Iterable.
+However, you cannot remove elements during a for-each loop.
+
+<h2>Fail-fast behavior</h2>
+Most iterators in the JCF are fail-fast.
+This means that the iterator is invalidated if the container is modified by something other than the iterator's own remove or add method
+(the iterator will throw a ConcurrentModificationException if you try to use it again).
+If there are multiple iterators, only the iterator that modified the container will still be valid.
+
+<h2>Iterator implementation</h2>
+<b>Sample code</b>
+<br><b>Classes:</b> <a href="classes_with_iterators/ArrayList.java">ArrayList</a> /
+<a href="classes_with_iterators/ArrayQueue.java">ArrayQueue</a> /
+<a href="classes_with_iterators/SinglyLinkedList.java">SinglyLinkedList</a>
+<br><b>Interfaces:</b> <a href="classes_with_iterators/List.java">List</a> / <a href="classes_with_iterators/Queue.java">Queue</a>
+<br>These are simplified implementations of the JCF iterators (only next() and hasNext() are implemented, and fail-fast is not implemented).
+
+<ul><li>An iterator must keep track of its current position (e.g. an index or a reference to a node).</li>
+<li>We do not give the user direct access to nodes.</li>
+<li>The JCF implements fail-fast by counting modifications (it compares the current modCount to the expectedModCount).</li></ul>
+
+</div>
+</body>
+</html>

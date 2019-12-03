@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<div class="figure"><img src="unbalancedtree.png" width="400"><br>Balanced and unbalanced trees. Source: helloacm.com</div>
+<p><h1>Self-balancing trees</h1>
+The runtime of search, insert, and delete is proportional to the height of the tree.
+If we insert keys randomly, the expected height is O(logn). (proof: Cormen p. 300)
+In the worst case, the height is O(n), for example if we insert the keys in increasing order.
+
+<br><br>We can use a <b>self-balancing tree</b> to achieve a worst-case height (and worst-case runtime) of O(logn).
+Two well-known types of self-balancing trees are the <b>AVL tree</b> and the <b>red-black tree</b>.
+<br><a href="https://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html">TreeSet</a>
+and <a href="https://docs.oracle.com/javase/7/docs/api/java/util/TreeMap.html">TreeMap</a> (JCF)
+are implemented with a red-black tree.
+
+<h2 style="clear:both">AVL trees</h2>
+<div class="figure"><img src="avl.png" width="247"><br>AVL tree.  The blue numbers are heights.<br>Source: Goodrich p. 479</div>
+An <b>AVL tree</b> is a <b>height-balanced</b> binary search tree.  This means that for any node, the heights of its two subtrees differ by at most 1.
+The height of an AVL tree with n nodes is O(logn).</p>
+<div class="code"><b>Proof</b>
+Let n(h) = the minimum number of nodes in a tree of height h.
+This minimal tree has a root and subtrees of heights h-1 and h-2,
+where each subtree is also a minimal tree.  Therefore,
+n(h) = 1 + n(h-1) + n(h-2)
+n(h) > n(h-1) + n(h-2)
+n(h) > n(h-2) + n(h-2)     (because n(h-1) > n(h-2))
+n(h) > 2 &middot; n(h-2)
+n(h) > 2<sup>2</sup> &middot; n(h-4)         (because n(h-2) > 2n(h-4))
+...                        (repeat)
+n(h) > 2<sup>(h-1)/2</sup> &middot; n(1)      (if h is odd)
+n(h) > 2<sup>(h-2)/2</sup> &middot; n(2)      (if h is even)
+n(h) > 2<sup>(h-2)/2</sup>             (true in both cases)
+log(n(h)) > (h-2)/2        (take the log of both sides)
+h < 2log(n(h)) + 2         (multiply by 2, then add 2)
+h < 2logn + 2              (because n(h) &le; n)
+h = O(logn)
+</div>
+
+<h2 style="clear:both">Rotations</h2>
+<div class="figure"><img src="treerotation.png" width="400"><br>Tree rotations. Source: wikipedia.org</div>
+After each insertion and deletion, if the tree becomes unbalanced, we perform a single or double <b>rotation</b> to rebalance the tree.
+A rotation changes the structure of a subtree so that one of the root's children becomes the new root.
+There are two types of rotation, a left rotation and a right rotation.
+
+<h2 style="clear:both">Insertion and deletion</h2>
+We begin with a normal insertion or deletion.
+From the new/deleted node, we move upward through the tree until we find the first unbalanced node
+(a node whose subtrees differ in height by more than 1).
+Let Z be the unbalanced node.  Let Y be the child of Z with greater height, and X be the child of Y with greater height.
+In insertion, all 3 will be ancestors of the new node.
+In deletion, if Y has 2 children with the same height, choose X such that both directions are the same.
+
+<br><br>We look at the directions from Z to Y to X to determine which case we are in.
+Then we rebalance the subtree as shown in the images below.
+
+<br><br>In insertion, we only need to rebalance once.
+In deletion, rebalancing a subtree may make an ancestor unbalanced, so we may need to rebalance again.
+
+<div class="figure"><img src="leftleft.jpeg" width="400">
+<img src="rightright.jpeg" width="370">
+<br><br><img src="leftright.jpeg" width="420">
+<img src="rightleft.jpeg" width="420"><br>Source: cpp.edu/~ftang</div>
+
+<div class="figure"><img src="avlexample.jpg" width="500"><br>Source: slideshare.net/sandpoonia</div>
+<h2>Insertion example</h2>
+When we insert 14, the AVL tree becomes unbalanced.  6 is the first unbalanced node.
+The directions from 6 to 15 to 7 are right-left.
+We do a right rotation on the subtree rooted at 15, followed by a left rotation on the subtree rooted at 6.
+
+<h2>Runtime</h2>
+The height of the tree is always O(logn), so searching, insertion, and deletion take O(logn) time.
+Finding the unbalanced node(s) takes O(logn) time.  Each rebalancing takes O(1) time.
+For insertion we only need to do one rebalancing.  For deletion, in the worst case we need to do O(logn) rebalancings.
+Therefore the total time for insertion or deletion is O(logn) (worst-case).
+
+<h2>AVL tree implementation</h2>
+<b>Sample code</b>
+<br><b>Class:</b> <a href="classes/AVLTreeSet.java">AVLTreeSet</a>
+<br><b>Interface:</b> <a href="classes/Set.java">Set</a>
+<ul><li>Each node stores its own height.
+In each insertion and deletion, only the ancestors of the new/deleted node need to update their heights.</li>
+<li>A node's balance factor is the difference between its subtrees' heights.
+Some AVL tree implementations only store the balance factors and not the heights.</li></ul>
+</p>
+
+</div>
+</body>
+</html>

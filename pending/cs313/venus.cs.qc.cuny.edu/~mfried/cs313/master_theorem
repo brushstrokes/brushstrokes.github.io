@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>CS313</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="main2">
+
+<p><h1>Master theorem</h1>
+The master theorem may be used to analyze the runtime of many divide-and-conquer algorithms.
+<br>Suppose an algorithm divides the problem of size n into a subproblems, each of size n/b.
+On each level of recursion, f(n) is the cost of dividing the problem and combining the subproblem solutions.
+<br>To apply the master theorem, we express the runtime T(n) by the recurrence relation,
+<br>T(n) = aT(n/b) + f(n)
+
+<br><br>The master theorem tells us</p>
+<div class="code">1. If f(n) = O(n<sup>log<sub>b</sub>a - &epsilon;</sup>),               then T(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>)
+
+2. If f(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>),                  then T(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>logn)
+
+3. If f(n) = &Omega;(n<sup>log<sub>b</sub>a + &epsilon;</sup>)
+AND af(n/b) &le; cf(n) for some c < 1,     then T(n) = &Theta;(f(n))
+
+(&epsilon; may be any positive constant)
+</div>
+
+<h2>Applying the master theorem to mergesort</h2>
+In mergesort, we divide the problem into 2 subproblems, each of size n/2, and the cost of merging per recursion level is &Theta;(n).
+<br>a = 2
+<br>b = 2
+<br>n<sup>log<sub>b</sub>a</sup> = n<sup>log<sub>2</sub>2</sup> = n
+
+<br><br>We are in case 2 because f(n) = &Theta;(n).  Therefore T(n) = &Theta;(nlogn).
+
+</div>
+</body>
+</html>
