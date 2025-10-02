@@ -1,0 +1,7 @@
+# Block all bots from the entire site
+User-agent: *
+Disallow: /
+
+# Allow Googlebot for indexing (optional)
+User-agent: Googlebot
+Allow: /
